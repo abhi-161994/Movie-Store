@@ -26,6 +26,13 @@
         <%= f.text_area :plot, autofocus: true, class: "form-control",required: true %>
   </div>
 
+
+  <div class="form-group">
+      <%= f.label :Year %>
+      <%= f.date_field :year,as: :year,class: "form-control", required: true %>
+    </div>
+
+
   <div class="form-group">
       <%= f.label :Rating %>
       <%= f.number_field :rating, class: "form-control", required: true %>
