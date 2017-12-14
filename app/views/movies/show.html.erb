@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
 <div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
@@ -88,29 +88,19 @@
 					<img alt="<% @movies.title %>" src="<%= @movies.image_url %>" class="img-thumbnail" />
 				</div>
 				<div class="col-md-8">
+					<div class="col-md-4">
 					<h3>
-						<%= @movies.title + " " + "(#{@movies.year})" %><%=image_tag 'rating.png',class:"rating-show-image"%><p class= "rating-show"> <%= @movies.rating %></p>
+						<%= @movies.title + " " + "(#{@movies.year})" %>
 					</h3>
-					<!-- <dl>
-						<dt>
-							Genre
-						</dt>
-						<dd>
-							<%= @movies.genre %>
-						</dd>
-						<dt>
-							Plot
-						</dt>
-						<dd>
-							<%= @movies.plot%>
-						</dd>
-					</dl> -->
-			 <div>
-					    <b><i>Genre:</i></b>
-							<i><%= @movies.genre %></i>
-			</div>
-					 <div>
-						   <h2>Plot</h2>
+					<b><i>Genre:</i></b>
+					<i><%= @movies.genre %></i>
+				</div>
+				<div class ="col-md-4">
+						 	<%=image_tag 'rating.png',class:"rating-show-image"%>
+							<p class= "rating-show"> <%= @movies.rating + "/10" %></p>
+						</div>
+						<div class="clearfix"></div>
+				 <h2>Plot</h2>
 						   <p><%= @movies.plot%></p>
 				   </div>
 
