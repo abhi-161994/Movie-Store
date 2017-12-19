@@ -1,0 +1,25 @@
+	<div class="row">
+		<div class="col-md-12">
+        <h3>
+          Movies Details
+        </h3>
+			<div class="tabbable" id="tabs-965551">
+				<ul class="nav nav-tabs">
+					<li class="<%= rating_active?(@view)%>">
+						<a href="#panel-433299" data-toggle="tab">By Rating</a>
+					</li>
+					<li class="<%=view_active?(@view)%>">
+						<a href="#panel-140373" data-toggle="tab">By Views</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-433299">
+          <%=render partial:"index",locals: {movies: @movies_topviewed} %>
+					</div>
+					<div class="tab-pane" id="panel-140373">
+					  <%=render partial:"index",locals: {movies: @movies_toprated} %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

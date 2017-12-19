@@ -1,14 +1,28 @@
-
-  <div class="row">
-	 <% movies.each do |movie|%>
-	 <a href="<%=movie_path(movie.id)%>">
-		 <div class="col-md-3">
-				 <img alt="Bootstrap Image Preview" src="<%= movie.image_url%>" class="img-rounded image-setting-index" />
-         <h3 class="text-centre text-info">
-         <%= movie.title %>
-         <h3>
-		</div>
-	 </a>
-	 <% end %>
+<div class="row">
+  <div class="">
+  <%movies.each do |movie|%>
+  <div class="col-md-3">
+    <a href="<%=movie_path(movie.id)%>">
+      <img src="<%=movie.image_url%>" class="img"/>
+      <p><strong style= "font-style: italic;"><%=movie.title%></strong></p>
+    </a>
+  </div>
+  <%end%>
   </div>
 </div>
+
+
+    <!-- <div class="row">
+        <% movies.each  do|movie| %>
+  	       <a href="<%=movie_path(movie.id)%>">
+
+                <div class="col-md-3">
+                <img class="Bootstap-image-Preview" src="<%= movie.image_url%>" class="img-rounded image-setting-index"  />
+                </a>
+                <h3 class="text-centre text-info">
+                <%= movie.title %>
+               </h3>
+
+                </div>
+                <% end %>
+              </div> -->

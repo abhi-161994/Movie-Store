@@ -1,14 +1,22 @@
 class MoviesController < ApplicationController
 
-  before_action :set_id,except:[:new,:create,:index]
-  before_action :get_toprated, only:[:index]
-  before_action :get_topviewed, only:[:index]
+  before_action :set_id,except:[:new,:create,:index,:detail]
+  before_action :get_toprated, only:[:index,:detail]
+  before_action :get_topviewed, only:[:index,:detail]
 
 
   def index
-    @movies = Movie.new
+    @movies = Movie.all.order('created _at desc').limit(3)
     @movie_toprated = @movies_toprated.limit(4)
     @movie_topviewed = @movies_topviewed.limit(4)
+
+    @movie_search = Movie.all
+    srch = params[:search]
+    if srch
+      @movie_search = Movie.search(srch).order("created_at DESC")
+    else
+      @movie_search = Movie.all.order('created_at DESC')
+
   end
 
   def new
@@ -36,6 +44,12 @@ end
   end
 
   def destroy
+  end
+
+  def detail
+  @movies_toprated = Movie.all.order('rating desc')
+  @movies_topviewed = Movie.all.order('rating asc')
+  @view = params[:view]
   end
 
   private

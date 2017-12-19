@@ -50,10 +50,21 @@
   .text-center{
     text-align: center;
   }
-  img.image-setting-index:hover {
+  img.img{
+    padding: 10px;
+    width: 270px;
+    height: 300px;
+  }
+  img.img:hover {
    animation: shake 0.5s;
    animation-iteration-count: infinite;
  }
+ .browse-index{
+  float: right;
+}
+a.heading:hover{
+  text-decoration: none;
+}
 
  @keyframes shake {
    0% { transform: translate(1px, 1px) rotate(0deg); }
