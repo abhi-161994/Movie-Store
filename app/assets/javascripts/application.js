@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require rails_emoji_picker
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks

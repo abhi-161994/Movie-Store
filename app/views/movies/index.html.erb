@@ -1,4 +1,4 @@
-<h1>First Movie</h1>
+<h1>Movie Store</h1>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -7,7 +7,7 @@
 
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">Movie Store</a>
+					</button> <a class="navbar-brand" href="#">MovieStore</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,7 +18,7 @@
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control"/>
+							<input type="text" class="form-control" />
 						</div>
 						<button type="submit" class="btn btn-default">
 							Search
@@ -51,6 +51,70 @@
 				</div>
 
 			</nav>
+			<div class="carousel slide" id="carousel-795038">
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#carousel-795038">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-795038">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-795038">
+					</li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img alt="Carousel Bootstrap First" src="<%=Movie.third.image_url%>" style="margin:0 auto"/>
+						<div class="carousel-caption">
+							<h4>
+								First Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="Carousel Bootstrap Second" src="<%=Movie.second.image_url%>" style="margin:0 auto"/>
+						<div class="carousel-caption">
+							<h4>
+								Second Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="Carousel Bootstrap Third" src="<%=Movie.first.image_url%>" style="margin:0 auto" />
+						<div class="carousel-caption">
+							<h4>
+								Third Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+				</div> <a class="left carousel-control" href="#carousel-795038" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-795038" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
 		</div>
+	</div>
+	<h3>Top Views Movies</h3>
+	  <%=render partial:"index",locals: {movies: @movie_topviewed} %>
+
+
+  <h3>Top Rated Movies</h3>
+   <%=render partial:"index",locals: {movies: @movie_toprated} %>
+
+		    <!-- <div class="col-md-3">
+            <img alt="Bootstrap Image Preview" src="<%= Movie.second.image_url%>" class="img-rounded image-setting-index" />
+	    	</div>
+
+	      <div class="col-md-3">
+          <img alt="Bootstrap Image Preview" src="<%= Movie.third.image_url%>" class="img-rounded image-setting-index" />
+	   	  </div>
+
+        <div class="col-md-3">
+          <img alt="Bootstrap Image Preview" src="<%= Movie.fourth.image_url%>" class="img-rounded image-setting-index" />
+       </div> -->
 	</div>
 </div>

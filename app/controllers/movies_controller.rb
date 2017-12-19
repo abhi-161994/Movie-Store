@@ -1,9 +1,14 @@
 class MoviesController < ApplicationController
 
   before_action :set_id,except:[:new,:create,:index]
+  before_action :get_toprated, only:[:index]
+  before_action :get_topviewed, only:[:index]
+
 
   def index
     @movies = Movie.new
+    @movie_toprated = @movies_toprated.limit(4)
+    @movie_topviewed = @movies_topviewed.limit(4)
   end
 
   def new
@@ -14,7 +19,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    @movie_list = Movie.all.order('rating desc')
   end
 
   def create
@@ -43,4 +48,13 @@ end
   def set_id #this is for call backs
     @movies = Movie.find(params[:id])
   end
+  def get_toprated
+   @movies_toprated = Movie.all.order('rating desc')
+ end
+
+
+ def get_topviewed
+   @movies_topviewed = Movie.all.order('rating asc')
+ end
+
 end

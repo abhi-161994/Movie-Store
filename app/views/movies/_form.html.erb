@@ -23,7 +23,8 @@
 
   <div class="form-group">
         <%= f.label :Plot %>
-        <%= f.text_area :plot, autofocus: true, class: "form-control",required: true %>
+        <%= f.text_area :plot, autofocus: true, class: "form-control",data:{ emojiable: true},required: true %>
+
   </div>
 
 
@@ -53,4 +54,4 @@
       <%= f.submit "Add new Moviews",class: "btn btn-success btn-block"%>
     </div>
   </div>
-  <%end%>
+<%end %>
