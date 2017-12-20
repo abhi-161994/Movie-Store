@@ -11,12 +11,12 @@ class MoviesController < ApplicationController
     @movie_topviewed = @movies_topviewed.limit(4)
 
     @movie_search = Movie.all
-    srch = params[:search]
-    if srch
-      @movie_search = Movie.search(srch).order("created_at DESC")
+    @srch = params[:search]
+    if @srch
+      @movie_search = Movie.search(@srch).order("created_at DESC")
     else
       @movie_search = Movie.all.order('created_at DESC')
-
+    end
   end
 
   def new
@@ -47,11 +47,19 @@ end
   end
 
   def detail
-  @movies_toprated = Movie.all.order('rating desc')
-  @movies_topviewed = Movie.all.order('rating asc')
+    @movies_toprated = Movie.all.order('rating desc').search(params[:search])
+    @movies_topviewed = Movie.all.order('rating asc').search(params[:search])
+    if @movies_toprated.present?
+     puts "call"
+  else
+    puts "call else"
+    @movies_toprated = Movie.all.order('rating desc')
+    @movies_topviewed = Movie.all.order('rating asc')
+    flash[:alert] = "There are no movies containing the term"
+   end
   @view = params[:view]
-  end
 
+end
   private
 
   def movie_params
