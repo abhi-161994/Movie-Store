@@ -19,28 +19,39 @@
 						<%= submit_tag "Search",class:"btn btn-default" %>
 						<% end %>
 
-        
+
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="#">Link</a>
+							<% if user_signed_in? %>
+
+							<% else %>
+							<li><a href="<%= new_user_registration_path%>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+							<% end %>
 						</li>
+
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
+							<% if user_signed_in? %>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><%= current_user.name%>
+							 <% else %>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Action<strong class="caret"></strong></a>
+							 <% end %>
+						  	<ul class="dropdown-menu">
+									 <% if user_signed_in? %>
 								<li>
-									<a href="#">Action</a>
-								</li>
-								<li>form-group comment-show"
-									<a href="#">Another action</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
+									<%= link_to "User Profile",edit_user_registration_path%>
 								</li>
 								<li>
-									<a href="#">Separated link</a>
+									 <%= link_to "SignOut",destroy_user_session_path,method: :delete%>
 								</li>
+								<% else %>
+
+								<li>
+									<li><a href="<%= new_user_registration_path%>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+								</li>
+								<li>
+									 <li><a href="<%= new_user_session_path%>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+								</li>
+						    <% end %>
 							</ul>
 						</li>
 					</ul>
