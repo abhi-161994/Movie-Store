@@ -50,9 +50,9 @@ end
     @movies_toprated = Movie.all.order('rating desc').search(params[:search])
     @movies_topviewed = Movie.all.order('rating asc').search(params[:search])
     if @movies_toprated.present?
-     puts "call"
+
   else
-    puts "call else"
+
     @movies_toprated = Movie.all.order('rating desc')
     @movies_topviewed = Movie.all.order('rating asc')
     flash[:alert] = "There are no movies containing the term"

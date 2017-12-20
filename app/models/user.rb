@@ -6,5 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          has_many :comments, dependent: :destroy
          has_many :mmovies, through: :comments
-         validates_presence_of :name
+  validates_presence_of :name
+  mount_uploader :image,UserUploader
 end

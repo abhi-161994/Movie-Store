@@ -14,17 +14,24 @@
 .web-show{
   float: right;
 }
+.avatar-img{
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+}
 .avatar{
-  margin-bottom:100px;
   width: 100px;
-  height:105px;
-  float:left;
-  margin: 0 4px;
+  height:110px;
+
+}
+.comment{
+  margin-left: -80px;
 }
 .comment-box{
   margin: 0px;
   height: 114px;
-  width: 451px;
+  width: 435px;
+  float: right;
 }
 .image-setting-index{
   padding: 10px;
@@ -36,13 +43,13 @@
 }
 
   .comment-show{
+    margin-top: 10px;
     float: right;
+
   }
-  .form-group{
-    margin-bottom: 15px;
-  }
-  .comment{
-    float: left;
+
+  .back-color{
+    background-color: #cdd2d8;
   }
   h3{
     font-size: 24px;

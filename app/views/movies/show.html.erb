@@ -36,25 +36,51 @@
 		</div>
 	</div>
 
+<div class="row up-margin">
+	<div class="col-md-12">
+      <div class="col-md-6">
+               <% if @movies.comments.present?%>
+							  <div class="row back-color">
+								</br>
 
-		<div class="row">
-			<div class="col-md-6">
-			<h3>Reviews()</h3>
-			<form role="form" class="form-inline">
-			 <div class="comment">
-       <div class="form-group">
-			        <%=image_tag 'avatar.png',class:"img-thumbnail avatar"%>
-							<textarea rows="5"cols="50"></textarea>
-	  	</div>
-			<div class="form-group comment-show">
-				   <input type="submit" name="commit" value="submit" class="btn btn-primary" data-disable-with="submit">
+								 <%@movies.comments.order('created_at desc').limit(4).reverse.each do |comment| %>
+									 <div class="col-md-3">
+									  <% if comment.user.image.present? %>
+										<img alt="<% comment.user.name%>" src="<%= comment.user.image%>" class="img-thumbnail avatar-img" align="middle" />
+										<% else %>
+										 <%= image_tag "avatar.png",class: "img-thumbnail avatar-img",align: "middle" %>
+										 <% end %>
+
+									 </div>
+
+							  <div class="col-md-9 comment">
+								     <h3><%=  comment.user.name%></h3>
+								  <p>
+									    <%= comment.body%>
+							   	</p>
+							</div>
+
+					 <div class="clearfix"></div>
+			 </br>
+			 <%end%>
+
+			<div class="col-md-12">
+			 	 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" style="float: right;">
+					 More Reviews
+				 </button>
 			</div>
+
+			 <%= render partial: "comments_modal",locals: {movies: @movies} %>
+		</div>
+		<% else %>
+		Be the first to comment
+		<% end %>
+		<div class="row">
+			<%= render partial: "comments",locals: {movies: @movies} %>
 		</div>
 	</div>
-
-
-
-<div class="col-md-6">
+		
+	<div class="col-md-6">
 	<div class="panel panel-default">
 					 <div class="panel-heading">
 						<h3 class="panel-title">
@@ -65,3 +91,4 @@
 </div>
 			</div>
 		</div>
+	</div>
