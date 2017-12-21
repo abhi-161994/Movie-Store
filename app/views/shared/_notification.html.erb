@@ -10,10 +10,16 @@
  <strong><%= flash[:alert] %></strong>
 </div>
 
-<%elsif flash[:notice].present?%>
-<div class="alert alert-success alert-dismissable">
- <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
- <strong><%= flash[:notice] %></strong>
-</div>
 
-<%end%>
+
+<% elsif flash[:notice].present?%>
+
+<div class="popup" data-popup="popup-1">
+    <div class="popup-inner">
+        <h2>Wow! This is Awesome! (Popup #1)</h2>
+        <p><%= flash[:notice] %></p>
+        <p><a data-popup-close="popup-1" href="#">Close</a></p>
+        <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+    </div>
+</div>
+<% end %>

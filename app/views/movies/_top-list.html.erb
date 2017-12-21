@@ -9,12 +9,13 @@
   <tbody>
    <%count=0 %>
 		<%movies.each do |movie|%>
-		<%count+=1%>
+
 		<% if movie.genre == @movies.genre %>
+    	<%count+=1%>
 
     <tr>
       <td><%=count%></td>
-      <td><a href="<%= movie_path(movie.id)%>"> <%= movie.title %> </a> </td>
+      <td><a href="<%= movie_path(movie.id)%>" class="table"> <%= movie.title %> </a> </td>
       <td><%=movie.genre%></td>
     </tr>
 		<% end %>

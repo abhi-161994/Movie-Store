@@ -32,11 +32,17 @@ class MoviesController < ApplicationController
 
   def create
     @movies = Movie.new(movie_params)
-    if @movies.save
-      redirect_to @movies,notice: "Movie Successfully Saved"
-    else
-      render 'new'
-  end
+    respond_to do |format|
+        if @movies.save
+          format.html
+          format.json
+           js: "alert('The number is)"
+        #redirect_to @movies,notice: "Movie Successfully Saved"
+        else
+          render 'new'
+      end
+
+    end
 end
 
 
