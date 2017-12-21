@@ -32,17 +32,11 @@ class MoviesController < ApplicationController
 
   def create
     @movies = Movie.new(movie_params)
-    respond_to do |format|
         if @movies.save
-          format.html
-          format.json
-           js: "alert('The number is)"
-        #redirect_to @movies,notice: "Movie Successfully Saved"
+        redirect_to @movies,notice: "Movie Successfully Saved"
         else
           render 'new'
       end
-
-    end
 end
 
 
@@ -63,7 +57,7 @@ end
     @movies_topviewed = Movie.all.order('rating asc')
     flash[:alert] = "There are no movies containing the term"
    end
-  @view = params[:view]
+    @view = params[:view]
 
 end
   private
