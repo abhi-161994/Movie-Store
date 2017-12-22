@@ -22,6 +22,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'devise'
 gem 'activeadmin'
 gem 'animate-rails'
+gem 'draper'
 
 
 

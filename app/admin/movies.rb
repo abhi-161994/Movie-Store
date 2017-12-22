@@ -1,6 +1,6 @@
 ActiveAdmin.register Movie do
   permit_params :title,:image,:genre,:plot,:rating,:web,:year,:cast
-
+ decorate_with MovieDecorator
   index do
     selectable_column
     id_column
