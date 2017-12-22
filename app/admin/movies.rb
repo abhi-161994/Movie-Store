@@ -8,6 +8,10 @@ ActiveAdmin.register Movie do
     column :image
     column :genre
     column :plot
+    column :rating
+    column :web
+    column :year
+    column :cast
     actions
   end
 
