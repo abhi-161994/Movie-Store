@@ -17,9 +17,9 @@
           <% end%>
         </div>
         <div class="col-md-9 comment">
-          <h3><%=  comment.user.name%></h3>
+          <h3><%=  comment.user.name %><p class="btm">
           <p>
-            <%= comment.body%>
+            <%= comment.body%><p class="btm"><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong></small></p>
           </p>
         </div>
 

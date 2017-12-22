@@ -56,10 +56,10 @@
 							  <div class="col-md-9 comment">
 								     <h3><%=  comment.user.name%></h3>
 								  <p>
-									    <%= comment.body%>
+									    <%= comment.body %><p class="btm"><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong></small></p>
 							   	</p>
 							</div>
-
+            </p>
 					 <div class="clearfix"></div>
 			 </br>
 			 <%end%>
