@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
- Movie.create(title: "The Pursuit of Happyness",year: "2006",genre: "Biography",cast: "Will Smith, Jaden Smith, Thandie Newton, Brian Howe",plot: "A struggling salesman takes custody of his son as he's poised to begin a life-changing professional career.",remote_image_url: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5NjQ0NDI3NF5BMl5BanBnXkFtZTcwNDI0MjEzMw@@._V1_SX300.jpg",rating: "8.0",web: "http://www.sonypictures.com/movies/thepursuitofhappyness/")
+Movie.create(title: "The Pursuit of Happyness",year: "2006",genre: "Biography",cast: "Will Smith, Jaden Smith, Thandie Newton, Brian Howe",plot: "A struggling salesman takes custody of his son as he's poised to begin a life-changing professional career.",remote_image_url: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ5NjQ0NDI3NF5BMl5BanBnXkFtZTcwNDI0MjEzMw@@._V1_SX300.jpg",rating: "8.0",web: "http://www.sonypictures.com/movies/thepursuitofhappyness/")
 
 Movie.create(title: "Guardians of the Galaxy Vol. 2",year: "2017",genre: "Action",cast: "Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel",plot: "The Guardians must fight to keep their newfound family together as they unravel the mystery of Peter Quill's true parentage.",remote_image_url: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg",rating: "7.8",web: "https://marvel.com/guardians")
 

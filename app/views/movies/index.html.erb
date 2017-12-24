@@ -55,7 +55,7 @@
           </div>
         </div><!-- /.item -->
 
-      </div><!-- /.carousel-inner -->
+    <!-- /.carousel-inner -->
 
       <!-- Controls -->
       <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -69,7 +69,19 @@
     </div><!-- /.carousel -->
 
 </div><!-- /.container -->
+</div>
+<div class="container">
+<h3>Top Views Movies</h3>
+<%=render partial:"index",locals: {movies: @movie_topviewed} %>
+ <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%>
+</div>
 
+
+<div class="container">
+<h3>Top Rated Movies</h3>
+<%=render partial:"index",locals: {movies: @movie_toprated} %>
+<%= link_to "Browse More",movies_detail_path(view: "ByRating"), class: "browse-index"%>
+</div>
 
 
 
@@ -106,18 +118,7 @@
 				</div> <a class="left carousel-control" href="#carousel-795038" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-795038" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div> -->
-		<div class="container">
-	<h3>Top Views Movies</h3>
-	  <%=render partial:"index",locals: {movies: @movie_topviewed} %>
-		 <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%>
-</div>
 
-
-<div class="container">
-  <h3>Top Rated Movies</h3>
-   <%=render partial:"index",locals: {movies: @movie_toprated} %>
-	  <%= link_to "Browse More",movies_detail_path(view: "ByRating"), class: "browse-index"%>
-</div>
 		    <!-- <div class="col-md-3">
             <img alt="Bootstrap Image Preview" src="<%= Movie.second.image_url%>" class="img-rounded image-setting-index" />
 	    	</div>
@@ -129,8 +130,7 @@
         <div class="col-md-3">
           <img alt="Bootstrap Image Preview" src="<%= Movie.fourth.image_url%>" class="img-rounded image-setting-index" />
        </div> -->
-	</div>
-</div>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script>
 

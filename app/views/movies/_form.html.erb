@@ -1,8 +1,12 @@
+<%@movies = movies %>
 <%= form_for @movies do |f| %>
 <% if @movies.errors.any? %>
   <% @movies.errors.full_messages.each do |error| %>
-  <%= error.inspect%>
-      <!-- js add_gritter(error, title: "Task1 Notification", sticky: false,time: 5000) %> -->
+  <div class="alert alert-danger alert-dismissable">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+   <strong><%= error%></strong>
+  </div>
+
   <% end%>
   <%end%>
   <div class="form-group">
@@ -10,6 +14,10 @@
       <%= f.text_field :title, class: "form-control", required: true %>
     </div>
 
+    <% if view == "automatic" %>
+    <%= hidden_field_tag 'view',view %>
+    <% else %>
+        <%= hidden_field_tag 'view',view %>
     <div class="form-group">
         <%= f.label :Poster %>
         <%= f.file_field :image, class: "form-control", required: true %>
@@ -48,7 +56,7 @@
       <%= f.label :Web %>
       <%= f.text_field :web, class: "form-control", required: true %>
   </div>
-
+   <% end %>
   <div class="form-group">
     <div class="col-sm-10">
       <%= f.submit "Add new Moviews",class: "btn btn-success btn-block"%>
