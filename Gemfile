@@ -23,6 +23,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'animate-rails'
 gem 'draper'
+gem 'omniauth-facebook'
 
 
 
