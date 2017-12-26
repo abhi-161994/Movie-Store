@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
-  before_action :set_id,except:[:index,:detail]
-  before_action :authenticate_admin!,only: [:create]
+  before_action :set_id,except:[:index,:detail,:create]
+  before_action :authenticate_admin_user!,only: [:create]
   before_action :get_toprated, only:[:index,:detail]
   before_action :get_topviewed, only:[:index,:detail]
 
@@ -33,21 +33,27 @@ class MoviesController < ApplicationController
 
   def create
     if params[:view] =="automatic"
+  
+      @mv = OtherServiceCall.new.api_call(params[:movie][:title])
+      if @mv == true
+        redirect_to 'http://maropost:3000/admin/movies',notice: "Movies Successfully Saved"
+      else
+        redirect_to new_admin_movie_path(view: params[:view]),alert: "Movie Not Found Please Verify it."
+      end
     else
     @movies = Movie.new(movie_params)
         if @movies.save
-        redirect_to admin_movie_path,notice: "Movie Successfully Saved"
-        else
+        redirect_to 'http://maropost:3000/admin/movies',notice: "Movies Successfully Saved"
+      else
           redirect_to new_admin_movie_path
       end
+  end
 end
-
 
   def update
   end
 
-  def destroy
-  end
+
 
   def detail
     @movies_toprated = Movie.all.order('rating desc').search(params[:search])
@@ -63,6 +69,10 @@ end
     @view = params[:view]
 
 end
+
+def destroy
+end
+
   private
 
   def movie_params
@@ -73,10 +83,10 @@ end
   def set_id #this is for call backs
     @movies = Movie.find(params[:id])
   end
+
   def get_toprated
    @movies_toprated = Movie.all.order('rating desc')
  end
-
 
  def get_topviewed
    @movies_topviewed = Movie.all.order('rating asc')

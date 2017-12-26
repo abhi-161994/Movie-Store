@@ -19,14 +19,14 @@ ActiveAdmin.register Movie do
   filter :genre
 
   action_item :new_movie,only: :index do
-    link_to "Automatically Movie Upload", "http://localhost:3000/admin/movies/new?view=automatic"
+    link_to "Automatically Movie Upload", "http://maropost:3000/admin/movies/new?view=automatic"
   end
 
  form :html => { :enctype => "multipart/form-data"} do |f|
     f.inputs do
       render "movies/form", {movies: movie,view: params[:view]}
     end
-    
+
   end
 
 end
