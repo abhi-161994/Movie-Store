@@ -1,0 +1,23 @@
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title del">Are you sure?</h4>
+      </div>
+      <div class="modal-body">
+        <p class="content">This is a pretty serious action you're about to take. You should think twice about this sort of thing.</p>
+      </div>
+
+
+    <button type="button" class="confirm" data-dismiss="modal">No,Cancel</button>
+      <%= link_to 'Yes Do It',[movies,comment], method: :delete, class: 'confirm sub' %>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

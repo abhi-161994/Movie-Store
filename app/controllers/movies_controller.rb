@@ -33,7 +33,7 @@ class MoviesController < ApplicationController
 
   def create
     if params[:view] =="automatic"
-  
+
       @mv = OtherServiceCall.new.api_call(params[:movie][:title])
       if @mv == true
         redirect_to 'http://maropost:3000/admin/movies',notice: "Movies Successfully Saved"

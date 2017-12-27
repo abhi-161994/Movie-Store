@@ -24,6 +24,7 @@ gem 'activeadmin'
 gem 'animate-rails'
 gem 'draper'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 
 

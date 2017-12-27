@@ -5,11 +5,11 @@ class  OtherServiceCall
     uri = URI("http://www.omdbapi.com/?t=#{@title}&apikey=d05104ae")
     a = Net::HTTP.get(uri)
     b = JSON.parse(a)
-    debugger
+
     if b["Response"] == "True"
       title = b["Title"]
       year = b["Year"]
-      debugger
+
       image = b["Poster"]
       genre = b["Genre"].split(",").first
       plot = b["Plot"]

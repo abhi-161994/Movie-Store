@@ -7,18 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Architects+Daughter" />
-  </head>
 
   <body>
 
     <body >
 
-    <div class="row">
+
       <div class="col-md-12">
         <%= render 'shared/header' %>
         <%= render 'shared/notification'%>
         <%= yield %>
   </div>
-  </div>
+
   </body>
 </html>

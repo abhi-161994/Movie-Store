@@ -14,7 +14,7 @@
 
         <!-- First slide -->
         <div class="item active">
-              <img alt="Carousel Bootstrap First" src="assets/street-photography-12.jpg" class="img1"/>
+              <img alt="Carousel Bootstrap First" src="assets/611eb4302a5edbc97b015c2c6b6bcc01-13.jpg" class="img1"/>
           <div class="carousel-caption">
             <h3 data-animation="animated slideInLeft" class="anim">
             Top Rated Movies
@@ -70,6 +70,8 @@
 
 </div><!-- /.container -->
 </div>
+<div class="indexbody">
+
 <div class="container">
 <h3>Top Views Movies</h3>
 <%=render partial:"index",locals: {movies: @movie_topviewed} %>
@@ -82,61 +84,14 @@
 <%=render partial:"index",locals: {movies: @movie_toprated} %>
 <%= link_to "Browse More",movies_detail_path(view: "ByRating"), class: "browse-index"%>
 </div>
+</div>
 
 
-
-
-	  <!-- <div class="row">
-			<div class="carousel slide" id="carousel-795038">
-				<ol class="carousel-indicators">
-					<li class="active" data-slide-to="0" data-target="#carousel-795038">
-					</li>
-					<li data-slide-to="1" data-target="#carousel-795038">
-					</li>
-					<li data-slide-to="2" data-target="#carousel-795038">
-					</li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="item active">
-						<img alt="Carousel Bootstrap First" src="<%=Movie.first.image_url%>" style="margin:0 auto"/>
-						<div class="carousel-caption">
-
-						</div>
-					</div>
-					<div class="item">
-						<img alt="Carousel Bootstrap Second" src="<%=Movie.second.image_url%>" style="margin:0 auto"/>
-						<div class="carousel-caption">
-
-						</div>
-					</div>
-					<div class="item">doAnimations
-						<img alt="Carousel Bootstrap Third" src="<%=Movie.third.image_url%>" style="margin:0 auto" />
-						<div class="carousel-caption">
-						</div>
-
-					</div>
-				</div> <a class="left carousel-control" href="#carousel-795038" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-795038" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-			</div>
-		</div> -->
-
-		    <!-- <div class="col-md-3">
-            <img alt="Bootstrap Image Preview" src="<%= Movie.second.image_url%>" class="img-rounded image-setting-index" />
-	    	</div>
-
-	      <div class="col-md-3">
-          <img alt="Bootstrap Image Preview" src="<%= Movie.third.image_url%>" class="img-rounded image-setting-index" />
-	   	  </div>
-
-        <div class="col-md-3">
-          <img alt="Bootstrap Image Preview" src="<%= Movie.fourth.image_url%>" class="img-rounded image-setting-index" />
-       </div> -->
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script>
 
-/* Demo Scripts for Bootstrap Carousel and Animate.css article
-* on SitePoint by Maria Antonietta Perna
-*/
+
 (function( $ ) {
 
 	//Function to animate slider captions
