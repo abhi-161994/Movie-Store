@@ -6,7 +6,8 @@
  // @import 'rails_emoji_picker';
  @import 'carousel';
  @import 'delete';
- 
+ @import 'signup';
+
 
 
 
@@ -68,3 +69,14 @@
      background:rgba(0,0,0,1);
      text-decoration:none;
  }
+
+#search
+{
+  display: none
+}
+.sec_bu {
+    display: none;
+}
+.seacrchs {
+    padding: 7px;
+}

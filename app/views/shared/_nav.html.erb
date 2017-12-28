@@ -17,8 +17,9 @@
 					</ul>
 
 						<%= form_tag(movies_detail_path, :method => "get", id: "search-form",class:"navbar-form navbar-left") do %>
+						<span class="glyphicon glyphicon-search seacrchs"></span>
 						<%= text_field_tag :search, params[:search], placeholder: "Search Movies",class:"form-group form-control" %>
-						<%= submit_tag "Search",class:"btn btn-default" %>
+						<%= submit_tag "Search",class:"btn btn-default sec_bu" %>
 						<% end %>
 
 

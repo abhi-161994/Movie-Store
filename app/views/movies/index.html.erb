@@ -17,13 +17,10 @@
               <img alt="Carousel Bootstrap First" src="assets/611eb4302a5edbc97b015c2c6b6bcc01-13.jpg" class="img1"/>
           <div class="carousel-caption">
             <h3 data-animation="animated slideInLeft" class="anim">
-            Top Rated Movies
+               Box office
             </h3>
-
-            <h3 data-animation="animated bounceInRight" class="animation">
-              This is the caption for slide 1
-            </h3>
-            <button class="btn btn-primary btn-lg btn1" data-animation="animated zoomInUp">Button</button>
+            <button class="btn btn-default common_class white_class" data-animation="animated zoomInUp"><%= link_to "TopViews",movies_detail_path(view: "ByRating")%></button>
+            <button class="btn btn-default common_class yellow_class" data-animation="animated zoomInUp"><%= link_to "TopRating",movies_detail_path(view: "ByViews")%></button>
           </div>
         </div> <!-- /.item -->
 
@@ -51,7 +48,8 @@
             <h3 data-animation="animated flipInX">
               This is the caption for slide 3
             </h3>
-            <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
+
+            <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn"></button>
           </div>
         </div><!-- /.item -->
 
@@ -88,10 +86,8 @@
 
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></script>
 <script>
-
-
 (function( $ ) {
 
 	//Function to animate slider captions

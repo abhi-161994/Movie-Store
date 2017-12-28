@@ -24,8 +24,8 @@ gem 'activeadmin'
 gem 'animate-rails'
 gem 'draper'
 gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'zxcvbn-ruby'
+#gem 'omniauth-twitter'
+#gem 'zxcvbn-ruby'
 gem 'omniauth-google-oauth2'
 
 

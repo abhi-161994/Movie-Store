@@ -13,8 +13,17 @@
 
 // require rails-ujs
 //= require jquery
-// require rails_emoji_picker
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
+
+jQuery(document).ready(function(){
+
+jQuery(document).on("click",".seacrchs",function(){
+
+  jQuery("#search").toggle("slow");
+});
+
+
+});
