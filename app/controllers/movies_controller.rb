@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
 
 
   def index
+
     @movies = Movie.all.order('created _at desc').limit(3)
     @movie_toprated = @movies_toprated.limit(4)
     @movie_topviewed = @movies_topviewed.limit(4)
@@ -18,6 +19,7 @@ class MoviesController < ApplicationController
     else
       @movie_search = Movie.all.order('created_at DESC')
     end
+       render layout: "index_layout"
   end
 
   def new

@@ -4,6 +4,7 @@ body{
   color:#fff;height: 100%;min-height: 100%;
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
+  // background-image:url('assets/586860004-movies-wallpaper.png');
 
 
 
@@ -33,22 +34,91 @@ body{
       }
     }
 
+    .background-video {
+      background-position: top center;
+      background-repeat: no-repeat;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
+
+    video,
+    source {
+      bottom: 0;
+      left: 0;
+      min-height: 100%;
+      min-width: 100%;
+      position: absolute;
+    }
+
+    .loaded .ytplayer-container {
+      display: block;
+    }
+
+    .loaded .placeholder-image {
+      opacity: 0;
+    }
+
+    .ytplayer-container {
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      min-width: 100%;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 0;
+    }
+
+    .placeholder-image {
+      height: 100%;
+      left: 0;
+      min-height: 100%;
+      min-width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+
+      opacity: 1;
+      transition: opacity .25s ease-in-out;
+      -moz-transition: opacity .25s ease-in-out;
+      -webkit-transition: opacity .25s ease-in-out;
+    }
+
+    .ytplayer-shield {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .ytplayer-player {
+      position: absolute;
+    }
   .mask {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    //background: rgba(0, 0, 0, 0.75);
     z-index: 1;
     box-shadow: 0 0 500px #000 inset,0 0 300px #000 inset,0 0 200px #000 inset;
+    // background-color: #fff;
 
     .modal{
       display: block;
       opacity:0;
-      width: 300px;
-      height: 320px;
+       width: 620px;
+      height: 400px;
       background:rgba(00,00,00,0.75);
       //background-image: -webkit-radial-gradient(cover, #DFDFDF, #B5B5B5);
-      border-radius: 5px;
+      border-radius: 20px;
+
       box-shadow:/*0 0 100px #000000, 0 0 50px #000000,*/ 0 0 10px #000000, 0 0 0 1px rgba(47, 47, 47, 0.5) inset;
       position: absolute;
       left: 50%;
@@ -65,11 +135,16 @@ body{
         overflow:hidden;
         transform: translate(-50% ,-50%);
         box-shadow: 0 0 8px #0a0a0a,0 0 0 1px #0a0a0a;
-
+        margin-top: 66px;
         background-repeat: no-repeat;
         background-position:center center;
         background-size:cover!important;
       }
+
+      .lgnnnn{
+        font-family: 'Architects Daughter' !important;
+      }
+
       .login{
 
 
@@ -140,4 +215,155 @@ body{
       background-size:cover!important;
     }
   }
+}
+
+
+
+.lgn-text,
+.lgn-pass {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.lgn-text:focus,
+.lgn-pass:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+.lgnsubmit {
+  margin-top: 28px;
+  width: 100%;
+  height: 32px;
+  background: #16a085;
+  border: none;
+  border-radius: 25px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+}
+
+.lgnsubmit:hover,
+.lgnsubmit:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.lgnsubmit:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.or {
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  background: #3498DB;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 41px;
+  text-align: center;
+  color: #fff;
+}
+// body .mask .modal
+// {
+//   background: #ffffff82;
+// }
+.loginwith{
+    font-family: 'Architects Daughter' !important;
+}
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 270px;
+  height: 400px;
+  background: url(../images/sign-up-form.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+margin-left: 20px;
+padding: 70px 0 0 0;
+text-align: center;
+}
+.left {
+    float: left;
+    width: 300px;
+    padding: 10px;
+}
+button.social-signin.facebook a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.right .loginwith {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #FFF;
+  text-align: center;
+}
+
+.or {
+
+    top: 230px;
+    left: 320px;
+
+}
+
+button.social-signin {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+  background: #32508E;
+}
+
+button.social-signin.twitter {
+  background: #55ACEE;
+}
+
+button.social-signin.google {
+  background: #DD4B39;
 }

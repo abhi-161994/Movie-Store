@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable ,:lockable, :timeoutable
   devise :omniauthable, omniauth_providers: %i[facebook]
 
+
          has_many :comments, dependent: :destroy
          has_many :movies, through: :comments
   validates_presence_of :name
