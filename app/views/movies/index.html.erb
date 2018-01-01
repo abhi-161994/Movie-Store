@@ -2,25 +2,33 @@
     <div id="carousel-example-generic" class="carousel slide">
       <!-- Indicators -->
 
-
+      <ol class="carousel-indicators">
+         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
 
         <!-- First slide -->
         <div class="item active">
-              <img alt="Carousel Bootstrap First" src="assets/611eb4302a5edbc97b015c2c6b6bcc01-13.jpg" class="img1"/>
+              <img alt="Carousel Bootstrap First" src="assets/guardians-of-the-galaxy-vol-2-wallpaper-10.jpg" class="img1"/>
           <div class="carousel-caption">
             <h3 data-animation="animated slideInLeft" class="anim">
                Box office
             </h3>
             <button class="btn btn-default common_class white_class" data-animation="animated zoomInUp"><%= link_to "TopViews",movies_detail_path(view: "ByRating")%></button>
             <button class="btn btn-default common_class yellow_class" data-animation="animated zoomInUp"><%= link_to "TopRating",movies_detail_path(view: "ByViews")%></button>
+            <div class="button-link" data-animaton="animated zoomInUp">
+                  <a href="https://youtu.be/2cv2ueYnKjg" class="hvr-shutter-out-horizontal">Watch Now</a>
+           </div>
+
           </div>
         </div> <!-- /.item -->
 
         <!-- Second slide -->
         <div class="item">
-					      <img alt="Carousel Bootstrap First" src="assets/carousel_hd_by_manakanso-d3nwacv.jpg" class="img1"/>
+					      <img alt="Carousel Bootstrap First" src="assets/jason-bourne--3d--et00038583-20-04-2017-19-57-12.jpg" class="img1"/>
           <div class="carousel-caption">
             <h3 class="icon-container" data-animation="animated bounceInDown">
               <span class="glyphicon glyphicon-heart"></span>

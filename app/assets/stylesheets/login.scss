@@ -34,73 +34,6 @@ body{
       }
     }
 
-    .background-video {
-      background-position: top center;
-      background-repeat: no-repeat;
-      bottom: 0;
-      left: 0;
-      overflow: hidden;
-      position: fixed;
-      right: 0;
-      top: 0;
-    }
-
-    video,
-    source {
-      bottom: 0;
-      left: 0;
-      min-height: 100%;
-      min-width: 100%;
-      position: absolute;
-    }
-
-    .loaded .ytplayer-container {
-      display: block;
-    }
-
-    .loaded .placeholder-image {
-      opacity: 0;
-    }
-
-    .ytplayer-container {
-      bottom: 0;
-      height: 100%;
-      left: 0;
-      min-width: 100%;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 0;
-    }
-
-    .placeholder-image {
-      height: 100%;
-      left: 0;
-      min-height: 100%;
-      min-width: 100%;
-      position: fixed;
-      top: 0;
-      z-index: 1;
-
-      opacity: 1;
-      transition: opacity .25s ease-in-out;
-      -moz-transition: opacity .25s ease-in-out;
-      -webkit-transition: opacity .25s ease-in-out;
-    }
-
-    .ytplayer-shield {
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-    }
-
-    .ytplayer-player {
-      position: absolute;
-    }
   .mask {
     position: absolute;
     height: 100%;
@@ -122,11 +55,11 @@ body{
       box-shadow:/*0 0 100px #000000, 0 0 50px #000000,*/ 0 0 10px #000000, 0 0 0 1px rgba(47, 47, 47, 0.5) inset;
       position: absolute;
       left: 50%;
-      top: 50%;
+      top: 55%;
       transform: translate(-50% ,-50%);
 
       .circle{
-        background: #0d0d0d;
+        background-image: url(http://www.ebiztown.com/images/client-face2.png);
         width: 120px;
         height: 120px;
         border-radius:50%;
@@ -366,4 +299,119 @@ button.social-signin.twitter {
 
 button.social-signin.google {
   background: #DD4B39;
+}
+
+
+/* Reset */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* BgMove */
+
+.bgwrap {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.bgmove {
+    background: url(http://hddesktopwallpapers.in/wp-content/uploads/2015/07/iron-man-3-wallpaper.jpg);
+    background-size: cover;
+    background-position: center center;
+    // opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    /* remove flicker in webkit */
+    -webkit-backface-visibility: hidden;
+}
+
+
+
+/* Extras */
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font: bold 60px Arial, sans-serif;
+    color: white;
+    z-index: 1;
+    text-shadow: 0 0 8px #222;
+}
+
+.text:after {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    z-index: -1;
+    content: '';
+    width: 100%;
+    border-bottom: 5px solid #ff3e3e;
+}
+
+
+
+body { font: 50 1em/1.5 "Neuton"; background: #090d00; color: rgba(255,255,255,.25); text-align: center; margin: 0 }
+
+p {
+	text-transform: uppercase;
+	letter-spacing: .5em;
+	display: inline-block;
+	border: 4px double rgba(255,255,255,.25);
+	border-width: 4px 0;
+	padding: 1.5em 0em;
+	position: absolute;
+	// top: 18%;
+	left: 50%;
+	width: 40em;
+	margin: 0 0 0 -20em;
+
+
+  span {
+
+  	font: 700 4em/1 'Architects Daughter' !important ;
+  	letter-spacing: 0;
+  	padding: .25em 0 .325em;
+	  display: block;
+	  margin: 0 auto;
+  	text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+/* Clip Background Image */
+
+	  background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+
+/* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
+  }
+}
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+
+.rembr{
+  color: grey;
+  margin-top: 15px;
 }
