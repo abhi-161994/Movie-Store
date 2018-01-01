@@ -7,15 +7,38 @@
  @import 'carousel';
  @import 'delete';
  @import 'signup';
- // @import 'login';
  @import 'index';
+ @import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Open+Sans:200,300,400,700|Neucha|Meddon);
+ @import 'popup';
 
+ .page-header {
+   margin: 0px !important;
+   border-bottom: 1px solid #eeeeee !important;
+   background-color: grey !important;
+   text-align: center;
+   height: 40px;
 
+ }
+.logom1{
+   height: 25px;
+  margin-top: 10px;
+}
 
+.navbar1{
+  font-family: "Meddon", cursive;
+   font-size: 1.45em;
+}
 
-
-
-
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+.navbar-login{
+  font-family: 'Architects Daughter' !important;
+  font-size: 1.35em;
+}
 
 
  /* Outer */

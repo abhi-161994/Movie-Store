@@ -1,5 +1,5 @@
 
-    <div id="carousel-example-generic" class="carousel slide">
+    <div id="carousel-example-generic carousel1" class="carousel slide">
       <!-- Indicators -->
 
       <ol class="carousel-indicators">
@@ -20,7 +20,7 @@
             <button class="btn btn-default common_class white_class" data-animation="animated zoomInUp"><%= link_to "TopViews",movies_detail_path(view: "ByRating")%></button>
             <button class="btn btn-default common_class yellow_class" data-animation="animated zoomInUp"><%= link_to "TopRating",movies_detail_path(view: "ByViews")%></button>
             <div class="button-link" data-animaton="animated zoomInUp">
-                  <a href="https://youtu.be/2cv2ueYnKjg" class="hvr-shutter-out-horizontal">Watch Now</a>
+                  <a href="https://youtu.be/2cv2ueYnKjg" target="_blank" class="hvr-shutter-out-horizontal">Watch Now</a>
            </div>
 
           </div>
@@ -31,25 +31,32 @@
 					      <img alt="Carousel Bootstrap First" src="assets/jason-bourne--3d--et00038583-20-04-2017-19-57-12.jpg" class="img1"/>
           <div class="carousel-caption">
             <h3 class="icon-container" data-animation="animated bounceInDown">
-              <span class="glyphicon glyphicon-heart"></span>
+               <span class="glyphicon glyphicon-heart"></span>
             </h3>
             <h3 data-animation="animated bounceInUp">
               Here You can Find Best Movies.
             </h3>
-            <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>
+            <div class="button-link" data-animaton="animated zoomInUp">
+                  <a href="https://youtu.be/v71ce1Dqqns" target="_blank" class="hvr-shutter-out-horizontal">Watch Now</a>
+           </div>
+
+            <!-- <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button> -->
           </div>
         </div><!-- /.item -->
 
         <!-- Third slide -->
         <div class="item darkerskyblue">
-					<img alt="Carousel Bootstrap First" src="assets/586860004-movies-wallpaper.png" class="img1"/>
+					<img alt="Carousel Bootstrap First" src="assets/the-pusuit-of-happyness1-1000x500.jpg" class="img1"/>
           <div class="carousel-caption">
             <h3 class="icon-container" data-animation="animated zoomInLeft">
               <span class="glyphicon glyphicon-glass"></span>
             </h3>
-            <h3 data-animation="animated flipInX">
-              This is the caption for slide 3
+            <!-- <h3 data-animation="animated flipInX">
+              <!-- This is the caption for slide 3 -->
             </h3>
+            <div class="button-link" data-animaton="animated zoomInUp">
+                  <a href="https://youtu.be/89Kq8SDyvfg" target="_blank" class="hvr-shutter-out-horizontal">Watch Now</a>
+           </div>
 
             <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn"></button>
           </div>
@@ -103,14 +110,14 @@ $(document).ready(function(){
 
 <div class="mask indexbody1">
 <div class="container">
-<h3>Top Views Movies</h3>
+<h3 class="index tvm">Top Views Movies</h3>
 <%=render partial:"index",locals: {movies: @movie_topviewed} %>
  <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%>
 </div>
 
 
 <div class="container">
-<h3>Top Rated Movies</h3>
+<h3 class="index trm">Top Rated Movies</h3>
 <%=render partial:"index",locals: {movies: @movie_toprated} %>
 <%= link_to "Browse More",movies_detail_path(view: "ByRating"), class: "browse-index"%>
 </div>
@@ -132,49 +139,37 @@ $(document).ready(function(){
 
 
 
-
-<script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></script>
-<script>
-(function( $ ) {
-
-	//Function to animate slider captions
-	function doAnimations( elems ) {
-		//Cache the animationend event in a variable
-		var animEndEv = 'webkitAnimationEnd animationend';
-
-		elems.each(function () {
-			var $this = $(this),
-				$animationType = $this.data('animation');
-			$this.addClass($animationType).one(animEndEv, function () {
-				$this.removeClass($animationType);
-			});
-		});
-	}
-
-	//Variables on page load
-	var $myCarousel = $('#carousel-example-generic'),
-		$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
-
-	//Initialize carousel
-	$myCarousel.carousel();
-
-	//Animate captions in first slide on page load
-	doAnimations($firstAnimatingElems);
-
-	//Pause carousel
-	$myCarousel.carousel('pause');
-
-	$myCarousel.carousel({
-  interval: 3000
-});
-
-
-	//Other slides to be animated on carousel slide event
-	$myCarousel.on('slide.bs.carousel', function (e) {
-		var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
-		doAnimations($animatingElems);
-	});
-
-})(jQuery);
-
-</script>
+  <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></script>
+  <script>
+  (function( $ ) {
+  	//Function to animate slider captions
+  	function doAnimations( elems ) {
+  		//Cache the animationend event in a variable
+  		var animEndEv = 'webkitAnimationEnd animationend';
+  		elems.each(function () {
+  			var $this = $(this),
+  				$animationType = $this.data('animation');
+  			$this.addClass($animationType).one(animEndEv, function () {
+  				$this.removeClass($animationType);
+  			});
+  		});
+  	}
+  	//Variables on page load
+  	var $myCarousel = $('#carousel-example-generic'),
+  		$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+  	//Initialize carousel
+  	$myCarousel.carousel();
+  	//Animate captions in first slide on page load
+  	doAnimations($firstAnimatingElems);
+  	//Pause carousel
+  	$myCarousel.carousel('pause');
+  	$myCarousel.carousel({
+    interval: 3000
+  });
+  	//Other slides to be animated on carousel slide event
+  	$myCarousel.on('slide.bs.carousel', function (e) {
+  		var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
+  		doAnimations($animatingElems);
+  	});
+  })(jQuery);
+  </script>
