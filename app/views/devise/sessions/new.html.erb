@@ -160,7 +160,7 @@ $(document).ready(function(){
       <span class="loginwith">Sign in with<br />social network</span>
       <button class="social-signin facebook"><%= link_to "Log in with Facebook", user_facebook_omniauth_authorize_path %></button>
       <button class="social-signin twitter">Log in with Twitter</button>
-      <button class="social-signin google">Log in with Google+</button>
+      <button class="social-signin google"><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></button>
     </div>
     <div class="or">OR</div>
     <div class="left">

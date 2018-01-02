@@ -54,9 +54,10 @@
 <div class="left">
 
 
-  <%= f.text_field :name, autofocus: true, class: "lgn-text",Placeholder:"Enter your name", required: true %>
+  <%=  f.text_field :name, autofocus: true, class: "lgn-text",Placeholder:"Enter your name", required: true %>
 
   <%= f.date_field :Date0fbirth, autofocus: true, class: "lgn-text", required: true %>
+  <%= f.file_field :image, autofocus: true, class: "lgn-text", required: true %>
   <%= f.email_field :email, autofocus: true, class: "lgn-text",Placeholder:"Email-john@abc.com", autofocus: true ,required: true %>
   <%= f.password_field :password, Placeholder:"Password-atleast 6 characters", class: "lgn-pass", required: true %>
   <%= f.password_field :password_confirmation, Placeholder:"Re-Password", class: "lgn-pass", required: true %>
@@ -68,8 +69,8 @@
   <span class="loginwith">Sign in with<br />social network</span>
 
   <button class="social-signin facebook"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></button>
-  <button class="social-signin twitter">Log in with Twitter</button>
-  <button class="social-signin google">Log in with Google+</button>
+  <button class="social-signin twitter">Sign in with Twitter</button>
+  <button class="social-signin google">Sign in with google+</button>
 </div>
 <div class="or">OR</div>
 </div>

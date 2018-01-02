@@ -3,9 +3,9 @@
   <div class="">
   <%movies.each do |movie|%>
   <div class="col-md-3">
-    <a href="<%=movie_path(movie.id)%>">
+    <a href="<%=movie_path(movie.id)%>" class="abcccc">
       <img src="<%=movie.image_url%>" class="img"/>
-      <p><strong style= "font-style: italic;"><%=movie.title%></strong></p>
+      <p class="movie-title"><strong><%=movie.title%></strong></p>
     </a>
   </div>
   <%end%>
