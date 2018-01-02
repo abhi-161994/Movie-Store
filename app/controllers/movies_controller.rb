@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
     @movie_search = Movie.all
     @srch = params[:search]
     if @srch
-      @movie_search = Movie.search(@srch).order("created_at DESC")
+       @movie_search = Movie.search(@srch).order("created_at DESC")
     else
       @movie_search = Movie.all.order('created_at DESC')
     end
@@ -62,8 +62,8 @@ end
     @movies_topviewed = Movie.all.order('rating asc').search(params[:search])
     if @movies_toprated.present?
 
-  else
 
+  else
     @movies_toprated = Movie.all.order('rating desc')
     @movies_topviewed = Movie.all.order('rating asc')
     flash[:alert] = "There are no movies containing the term"

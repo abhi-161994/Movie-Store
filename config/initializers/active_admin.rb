@@ -291,5 +291,5 @@ ActiveAdmin.setup do |config|
   #
   # config.order_clause = MyOrderClause
 
-  config.skip_before_action :authenticate_user!
+  # config.skip_before_action :authenticate_user!
 end

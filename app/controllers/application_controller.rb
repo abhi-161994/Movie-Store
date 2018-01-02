@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+#  before_action :authenticate_user!,only: []
+# skip_before_action :authenticate_user!,raise: false
 protect_from_forgery with: :exception
 before_action :configure_permitted_parameters, if: :devise_controller?
 

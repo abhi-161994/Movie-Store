@@ -1,0 +1,97 @@
+.page-header {
+  margin: 0px !important;
+  border-bottom: 1px solid #eeeeee !important;
+  background-color: grey !important;
+  height: 40px;
+
+}
+.logom1{
+  margin-left: 15px;
+  height: 25px;
+  margin-top: 10px;
+}
+
+.navbar1{
+ font-family: "Meddon", cursive;
+  font-size: 1.45em;
+}
+
+.navbar {
+   position: relative;
+   min-height: 50px;
+   margin-bottom: 0px;
+   border: 1px solid transparent;
+}
+.navbar-login{
+ font-family: 'Architects Daughter' !important;
+ font-size: 1.35em;
+}
+
+.movement li{
+  list-style: none;
+  font-size: 17px;
+  color: #fff;
+
+  -moz-transform:translateX(100%);
+   -webkit-transform:translateX(100%);
+   transform:translateX(100%);
+
+  -moz-animation: marque 15s linear infinite;
+  -webkit-animation: marque 15s linear infinite;
+  animation: marque 15s linear infinite;
+
+}
+.movement li{
+  font-family: "Meddon", cursive;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+@-moz-keyframes marque{
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes marque {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes marque {
+ 0%   {
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%);
+ }
+ 100% {
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%);
+ }
+}
+
+.marque span:hover {
+    animation-play-state: paused;
+}
+
+// .marquee span {
+//     display:block;
+//     padding-left: 100%;
+//     text-indent: 0;
+//     animation: marquee 15s linear infinite;
+//     cursor: context-menu;
+// }
+// .marquee {
+//     width: 220px;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     box-sizing: border-box;
+// }
+
+ // .marquee span:hover {
+ //     animation-play-state: paused;
+ // }
+ .abc-heder{
+   position: relative;
+   overflow: hidden;
+    top: 12px;
+    margin-right: 770px;
+ }

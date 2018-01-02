@@ -1,5 +1,5 @@
 
-    <div id="carousel-example-generic carousel1" class="carousel slide">
+    <div id="carousel-example-generic" class="carousel">
       <!-- Indicators -->
 
       <ol class="carousel-indicators">
@@ -12,30 +12,32 @@
 
         <!-- First slide -->
         <div class="item active">
-              <img alt="Carousel Bootstrap First" src="assets/guardians-of-the-galaxy-vol-2-wallpaper-10.jpg" class="img1"/>
+              <img alt="Carousel Bootstrap First" src="/assets/guardians-of-the-galaxy-vol-2-wallpaper-10.jpg" class="img1"/>
           <div class="carousel-caption">
             <h3 data-animation="animated slideInLeft" class="anim">
                Box office
             </h3>
             <button class="btn btn-default common_class white_class" data-animation="animated zoomInUp"><%= link_to "TopViews",movies_detail_path(view: "ByRating")%></button>
             <button class="btn btn-default common_class yellow_class" data-animation="animated zoomInUp"><%= link_to "TopRating",movies_detail_path(view: "ByViews")%></button>
-            <div class="button-link" data-animaton="animated zoomInUp">
+            <div class="button-link" >
                   <a href="https://youtu.be/2cv2ueYnKjg" target="_blank" class="hvr-shutter-out-horizontal">Watch Now</a>
            </div>
+        <div class="banner_desc">
+          <ul class="list_1">
+			    			<li>Published <span class="m_1">May 5, 2017</span></li>
+              </ul>
+
+        </div>
 
           </div>
         </div> <!-- /.item -->
+        <div class="clearfix"></div>
 
         <!-- Second slide -->
         <div class="item">
-					      <img alt="Carousel Bootstrap First" src="assets/jason-bourne--3d--et00038583-20-04-2017-19-57-12.jpg" class="img1"/>
+					      <img alt="Carousel Bootstrap First" src="/assets/jason-bourne--3d--et00038583-20-04-2017-19-57-12.jpg" class="img1"/>
           <div class="carousel-caption">
-            <h3 class="icon-container" data-animation="animated bounceInDown">
-               <span class="glyphicon glyphicon-heart"></span>
-            </h3>
-            <h3 data-animation="animated bounceInUp">
-              Here You can Find Best Movies.
-            </h3>
+
             <div class="button-link" data-animaton="animated zoomInUp">
                   <a href="https://youtu.be/v71ce1Dqqns" target="_blank" class="hvr-shutter-out-horizontal">Watch Now</a>
            </div>
@@ -43,23 +45,22 @@
             <!-- <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button> -->
           </div>
         </div><!-- /.item -->
-
+    <div class="clearfix"></div>
         <!-- Third slide -->
         <div class="item darkerskyblue">
-					<img alt="Carousel Bootstrap First" src="assets/the-pusuit-of-happyness1-1000x500.jpg" class="img1"/>
+					<img alt="Carousel Bootstrap First" src="/assets/the-pusuit-of-happyness1-1000x500.jpg" class="img1"/>
           <div class="carousel-caption">
-            <h3 class="icon-container" data-animation="animated zoomInLeft">
-              <span class="glyphicon glyphicon-glass"></span>
-            </h3>
+
             <!-- <h3 data-animation="animated flipInX">
               <!-- This is the caption for slide 3 -->
-            </h3>
-            <div class="button-link" data-animaton="animated zoomInUp">
-                  <a href="https://youtu.be/89Kq8SDyvfg" target="_blank" class="hvr-shutter-out-horizontal">Watch Now</a>
-           </div>
 
-            <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn"></button>
+
+              <div class="button-link" data-animaton="animated zoomInUp">
+                    <a href="https://youtu.be/v71ce1Dqqns" target="_blank" class="hvr-shutter-out-horizontal">Watch Now</a>
+             </div>
+           </div>
           </div>
+              <div class="clearfix"></div>
         </div><!-- /.item -->
 
     <!-- /.carousel-inner -->
@@ -70,76 +71,9 @@
     </div><!-- /.carousel -->
 
 </div><!-- /.container -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-
-
-
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-<script>
-$(document).ready(function(){
-  var  $v01  = $('.vertical0')
-          ,$v02  = $('.vertical1')
-          ,$v03  = $('.vertical2')
-          ,$v04  = $('.vertical3')
-          ,$v05  = $('.vertical4')
-      ,$v06  = $('.vertical5')
-      ,$v07  = $('.vertical6')
-      ,$v08  = $('.vertical7')
-      ,$v09  = $('.vertical8')
-      ,$v10  = $('.vertical9')
-          ,speed = 60
-          ,tl = new TimelineLite({onComplete:restart});
-          tl.fromTo($v01,speed*0.70,{y:-250} ,{y:-750} ,'sync')
-              .fromTo($v02,speed*0.75,{y:-950} ,{y:-1250},'sync')
-              .fromTo($v03,speed*0.95,{y:-1000},{y:-1850},'sync')
-              .fromTo($v04,speed*0.75,{y:-1250},{y:-1750},'sync')
-              .fromTo($v05,speed*0.85,{y:-1100},{y:-2000},'sync')
-          .fromTo($v06,speed*0.65,{y:-900},{y:-1950},'sync')
-          .fromTo($v07,speed*0.70,{y:-1300},{y:-2100},'sync')
-          .fromTo($v08,speed*0.95,{y:-850},{y:-1460},'sync')
-        .fromTo($v09,speed*0.55,{y:-1000},{y:-1750},'sync')
-        .fromTo($v10,speed*0.80,{y:-1200},{y:-1600},'sync')
-          tl.play();
-          function restart(){
- tl.stop();
- tl.restart();
-}
-});
-</script> -->
-
-
-<div class="mask indexbody1">
-<div class="container">
-<h3 class="index tvm">Top Views Movies</h3>
-<%=render partial:"index",locals: {movies: @movie_topviewed} %>
- <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%>
-</div>
-
-
-<div class="container">
-<h3 class="index trm">Top Rated Movies</h3>
-<%=render partial:"index",locals: {movies: @movie_toprated} %>
-<%= link_to "Browse More",movies_detail_path(view: "ByRating"), class: "browse-index"%>
-</div>
-</div>
-
-<!-- <% v = 0%>
-  <% while v<10 %>
-    <div class= "vertical vertical<%= v %>">
-        <% i = 0%>
-        <% while i<3 %>
-          <% Movie.all.each_with_index do |movie, index| %>
-            <div class="horizontal horizontal0<%= index %>" style="background: url(<%= movie.image_url %>);"></div>
-          <% end %>
-          <% i += 1%>
-        <% end %>
-    </div>
-    <% v+= 1 %>
-  <% end %> -->
-
-
-
-  <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></script>
   <script>
   (function( $ ) {
   	//Function to animate slider captions
@@ -173,3 +107,19 @@ $(document).ready(function(){
   	});
   })(jQuery);
   </script>
+
+
+<div class="mask indexbody1">
+<div class="container">
+<h3 class="index tvm">Top Views Movies</h3>
+<%=render partial:"index",locals: {movies: @movie_topviewed} %>
+ <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%>
+</div>
+
+
+<div class="container">
+<h3 class="index trm">Top Rated Movies</h3>
+<%=render partial:"index",locals: {movies: @movie_toprated} %>
+<%= link_to "Browse More",movies_detail_path(view: "ByRating"), class: "browse-index"%>
+</div>
+</div>

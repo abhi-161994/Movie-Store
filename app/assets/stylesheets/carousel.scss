@@ -1,18 +1,7 @@
 .main-container {
   padding: 10px 15px;
 }
-// .skyblue {
-// 	background-color: #22c8ff;
-// }
-// // .deepskyblue {
-// // 	background-color: #00bfff;
-// // }
-// .darkerskyblue {
-// 	background-color: #00a6dd;
-// }
-// .deepskyblue {
-// 	background-color: #00bfff;
-// }
+
 
 .carousel-indicators {
 	bottom: 0;
@@ -21,13 +10,11 @@
 .carousel-control.left {
 	background-image: none;
 }
-.carousel .item {
-	// min-height: 350px
-  height: 500px !important;
-	height: 100%;
-	width:100%;
+.carousel .item{
+min-height: 350px;
+height: 100%;
+width:100%;
 }
-
 .carousel .icon-container,
 .carousel-caption button {
 	background-color: #09c;
@@ -35,14 +22,7 @@
 .carousel-caption h3 {
 	padding: .5em;
 }
-.carousel .icon-container {
-	display: inline-block;
-	font-size: 25px;
-	line-height: 25px;
-	padding: 1em;
-	text-align: center;
-	border-radius: 50%;
-}
+
 .carousel-caption button {
 	border-color: #00bfff;
 	margin-top: 1em;
@@ -60,11 +40,6 @@
 }
 
 
-.p {
-  padding-top: 125px;
-  text-align: center;
-}
-
 .p a {
   text-decoration: underline;
 }
@@ -74,7 +49,8 @@
 
 .img1{
   width:100% !important;
-  height: 500px !important;
+  height: 520px !important;
+  // overflow: hidden;
 }
 
 .carousel-caption .common_class a {
@@ -130,20 +106,26 @@
 .carousel-caption {
     left: 20%;
     right: 15%;
-    padding-bottom: 30px;
     float: right;
     text-align: right;
     top: 20%;
 }
 }
-
+.marque{
+  font-size: 13px;
+}
+.abc-heder{
+  text-align: center;
+  color: red;
+  float: right;
+}
 
 
 
 .anim {
    font-size: 72px;
    font-family: 'Architects Daughter' !important;
- margin-bottom: 0px !important;
+   margin-bottom: 0px !important;
    font-style: normal;
    line-height: 84px;
    display: inline-block;
@@ -235,4 +217,36 @@ right:6%;
 .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+.banner_desc {
+  margin-left: 20px;
+display: block;
+z-index: 2;
+text-shadow: none;
+margin: 0;
+max-width: none;
+position: absolute;
+top:90.5%;
+right: 0;
+width: 100%;
+padding: 10px 15px 5px;
+background: rgba(3, 3, 3, 0.45);
+}
+
+ul.list_1 li{
+display: inline-block;
+color: #fff;
+text-transform: uppercase;
+font-weight: 600;
+font-size: 1.2em;
+
+padding:0;
+	margin:0;
+	list-style:none;
+}
+ul, ol {margin: 0;}
+span.m_1{
+	font-size:16px;
+	color:#cb242a;
 }

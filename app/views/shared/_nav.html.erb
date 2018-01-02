@@ -30,10 +30,11 @@
 							<li><a class="navbar1" href="<%= new_user_session_path%>"<span class="glyphicon glyphicon-user"></span> Login in</a></li>
 							<% end %>
 						</li>
-
+	
 						<li class="dropdown">
 							<% if user_signed_in? %>
-							 <a  href="#" class="dropdown-toggle navbar-login" data-toggle="dropdown">    <span class="glyphicon glyphicon-user"></span><%= current_user.name%>
+             <img class ="pull-left" style="max-width: 50px;border-radius: 35px;border: 3px solid #cccccc;" src="<%=current_user.image_url%>"/>
+							 <a  href="#" class="dropdown-toggle navbar-login" data-toggle="dropdown" style="float: left;"></span><%= current_user.name%>
 
 							 <% else %>
 							 <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Action<strong class="caret"></strong></a> -->
