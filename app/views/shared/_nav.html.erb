@@ -42,10 +42,10 @@
 						  	<ul class="dropdown-menu">
 									 <% if user_signed_in? %>
 								<li>
-									<%= link_to "User Profile",edit_user_registration_path%>
+									<%= link_to "User Profile",edit_user_registration_path ,class:"drpdown"%>
 								</li>
 								<li>
-									 <%= link_to "SignOut",destroy_user_session_path, method: :delete%>
+									 <%= link_to "SignOut",destroy_user_session_path, method: :delete,class:"drpdown"%>
 								</li>
 								<% else %>
 
@@ -54,6 +54,7 @@
 						    <% end %>
 							</ul>
 						</li>
+
 					</ul>
 				</div>
 

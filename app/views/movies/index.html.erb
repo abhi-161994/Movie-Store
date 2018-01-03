@@ -14,7 +14,7 @@
         <div class="item active">
               <img alt="Carousel Bootstrap First" src="/assets/guardians-of-the-galaxy-vol-2-wallpaper-10.jpg" class="img1"/>
           <div class="carousel-caption">
-            <h3 data-animation="animated slideInLeft" class="anim">
+            <h3 data-animation="animated flipInX" class="anim">
                Box office
             </h3>
             <button class="btn btn-default common_class white_class" data-animation="animated zoomInUp"><%= link_to "TopViews",movies_detail_path(view: "ByRating")%></button>
@@ -25,13 +25,13 @@
         <div class="banner_desc">
           <ul class="list_1">
 			    			<li>Published <span class="m_1">May 5, 2017</span></li>
+                <li>Rating <span class="m_1"><img src="/assets/rating2.png" alt=""/></span></li>
               </ul>
 
         </div>
 
           </div>
         </div> <!-- /.item -->
-        <div class="clearfix"></div>
 
         <!-- Second slide -->
         <div class="item">
@@ -41,6 +41,13 @@
             <div class="button-link" data-animaton="animated zoomInUp">
                   <a href="https://youtu.be/v71ce1Dqqns" target="_blank" class="hvr-shutter-out-horizontal">Watch Now</a>
            </div>
+           <div class="banner_desc">
+             <ul class="list_1">
+   			    			<li>Published <span class="m_1">july 27, 2016</span></li>
+                   <li>Rating <span class="m_1"><img src="/assets/rating2.png" alt=""/></span></li>
+                 </ul>
+
+           </div>
 
             <!-- <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button> -->
           </div>
@@ -48,11 +55,11 @@
     <div class="clearfix"></div>
         <!-- Third slide -->
         <div class="item darkerskyblue">
-					<img alt="Carousel Bootstrap First" src="http://getwallpapers.com/wallpaper/full/4/8/e/543248.jpg" class="img1"/>
+					<img alt="Carousel Bootstrap First" src="/assets/banner1.jpg" class="img1"/>
           <div class="carousel-caption">
 
             <!-- <h3 data-animation="animated flipInX">
-              <!-- This is the caption for slide 3 -->
+               This is the caption for slide 3 -->
 
 
               <div class="button-link" data-animaton="animated zoomInUp">
@@ -109,17 +116,20 @@
   </script>
 
 
-<div class="mask indexbody1">
+<div class=" indexbody1">
 <div class="container">
 <h3 class="index tvm">Top Views Movies</h3>
 <%=render partial:"index",locals: {movies: @movie_topviewed} %>
- <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%>
+<div class="index-btn">
+<button class="btn-animate"> <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%></button>
+</div>
 </div>
 
 
 <div class="container">
 <h3 class="index trm">Top Rated Movies</h3>
 <%=render partial:"index",locals: {movies: @movie_toprated} %>
-<%= link_to "Browse More",movies_detail_path(view: "ByRating"), class: "browse-index"%>
+<div class="index-btn">
+<button class="btn-animate"> <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%></button>
 </div>
 </div>

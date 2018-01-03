@@ -1,14 +1,20 @@
-<div class="container">
+
 <div class="row">
-  <div class="">
-  <%movies.each do |movie|%>
-  <div class="col-md-3">
-    <a href="<%=movie_path(movie.id)%>" class="abcccc">
-      <img src="<%=movie.image_url%>" class="img"/>
+<% movies.each_with_index  do |movie,index| %>
+   <% if (index % 4) == 0 %>
+   <div class="clearfix"></div>
+   <div class="col-sm-3 col-md-3">
+     <a href="<%=movie_path(movie.id)%>" class="abcccc">
+          <img src="<%=movie.image_url%>" class="img" />
       <p class="movie-title"><strong><%=movie.title%></strong></p>
-    </a>
-  </div>
-  <%end%>
-  </div>
-</div>
+     </a>
+    </div>
+   <%else%>
+   <div class="col-sm-3 col-md-3">
+      <a href="<%=movie_path(movie.id)%>" class="abcccc">
+     <img src="<%=movie.image_url%>" class="img" />
+      <p class="movie-title"><strong><%=movie.title%></strong></p>
+    </div>
+    <% end %>
+<% end %>
 </div>

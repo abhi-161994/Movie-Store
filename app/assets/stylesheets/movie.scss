@@ -58,6 +58,7 @@
     text-align: center;
   }
   img.img{
+    max-width: 100%;
     padding: 10px;
     width: 270px;
     height: 300px;
@@ -66,9 +67,7 @@
    animation: shake 0.5s;
    animation-iteration-count: infinite;
  }
- .browse-index{
-  float: right;
-}
+
 a.heading:hover{
   text-decoration: none;
 }

@@ -50,6 +50,7 @@ width:100%;
 .img1{
   width:100% !important;
   height: 520px !important;
+  background-size: cover;
   // overflow: hidden;
 }
 
@@ -220,30 +221,33 @@ right:6%;
 }
 
 .banner_desc {
-  margin-left: 20px;
+background: transparent;
+margin-left: 20px;
 display: block;
 z-index: 2;
 text-shadow: none;
 margin: 0;
-max-width: none;
+width: 100% !important;
 position: absolute;
 top:90.5%;
 right: 0;
 width: 100%;
 padding: 10px 15px 5px;
-background: rgba(3, 3, 3, 0.45);
+// background: rgba(3, 3, 3, 0.45);
 }
 
+span.m_1 img{
+	vertical-align: text-bottom;
+}
 ul.list_1 li{
+
+float: left;
 display: inline-block;
 color: #fff;
 text-transform: uppercase;
+margin-right:5%;
 font-weight: 600;
 font-size: 1.2em;
-
-padding:0;
-	margin:0;
-	list-style:none;
 }
 ul, ol {margin: 0;}
 span.m_1{

@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require alertify
 
 
 jQuery(document).ready(function(){

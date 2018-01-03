@@ -27,6 +27,7 @@ gem 'omniauth-facebook'
 #gem 'omniauth-twitter'
 #gem 'zxcvbn-ruby'
 gem 'omniauth-google-oauth2'
+gem 'alertify-rails'
 
 
 
