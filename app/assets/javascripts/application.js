@@ -18,6 +18,7 @@
 //= require turbolinks
 //= require alertify
 
+alertify.set('notifier','position', 'top-center');
 
 jQuery(document).ready(function(){
 

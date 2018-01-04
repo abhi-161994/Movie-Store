@@ -15,14 +15,42 @@
 
 }
 
+  .mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    //background: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+    // box-shadow: 0 0 500px #000 inset,0 0 300px #000 inset,0 0 200px #000 inset;
+    background-color: #2E4053;
+
+.modal{
+  display: block;
+
+}
 #login-box {
   position: relative;
   margin: 5% auto;
   width: 600px;
-  height: 400px;
+  height: 450px;
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  .circle{
+    background-image: url(http://www.ebiztown.com/images/client-face2.png);
+    width: 120px;
+    height: 120px;
+    border-radius:50%;
+    position:relative;
+    left:50%;
+    overflow:hidden;
+    transform: translate(-50% ,-50%);
+    box-shadow: 0 0 8px #0a0a0a,0 0 0 1px #0a0a0a;
+    margin-top: 66px;
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size:cover!important;
+  }
 }
 
 .left {
@@ -65,7 +93,7 @@ h1 {
 }
 
 .lgnsubmit {
-  margin-top: 28px;
+  // margin-top: 28px;
   width: 100%;
   height: 32px;
   background: #16a085;
@@ -78,6 +106,13 @@ h1 {
   transition: 0.1s ease;
   cursor: pointer;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+
+
+}
+
+a{
+   color: #ffffff;
+   text-decoration: none;
 }
 
 .lgnsubmit:hover,
@@ -95,7 +130,7 @@ h1 {
 
 .or {
   position: absolute;
-  top: 180px;
+  top: 264px;
   left: 280px;
   width: 40px;
   height: 40px;
@@ -165,7 +200,5 @@ button.social-signin.google {
   background: #DD4B39;
 }
 
-.lll{
-  background: url(http://www.eckertseamans.com/wp-content/uploads/2016/03/White-Hallway-Plain-Background-1024x599.jpg) no-repeat;
-  background-size: cover;
+
 }

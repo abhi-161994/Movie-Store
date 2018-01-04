@@ -1,38 +1,19 @@
 
 <% if flash[:error].present? %>
-<script>
-.alertify
-  .alert("Opps! Something went Wrong", function(){
-    alertify.message('OK');
-  });
-  </script>
-<!-- // <div class="alert alert-error alert-dismissable">
-//  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-//  <strong><%= flash[:error] %></strong>
-// </div>
- -->
+<div class="alert alert-error alert-dismissable">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+  <strong><%= flash[:error] %></strong>
+</div>
+
 <% elsif flash[:alert].present?%>
-<script>
-.alertify
-  .alert("This is an alert dialog.", function(){
-    alertify.message('OK');
-  });
-  </script>
-<!-- <div class="alert alert-danger alert-dismissable">
+<div class="alert alert-danger alert-dismissable">
  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
  <strong><%= flash[:alert] %></strong>
-</div> -->
+</div>
 
 <% elsif flash[:notice].present?%>
-<script>
-.alertify
-  .alert("This is an alert dialog.", function(){
-    alertify.message('OK');
-  });
-  </script>
-<!--
 <div class="alert alert-danger alert-dismissable">
  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
  <strong><%= flash[:notice] %></strong>
-</div> -->
+</div>
 <% end %>

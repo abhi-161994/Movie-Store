@@ -5,6 +5,9 @@
   height: 40px;
 
 }
+.page-header h1{
+  margin-top: 0px;
+}
 .logom1{
   margin-left: 15px;
   height: 25px;
@@ -44,9 +47,10 @@
 }
 .movement li{
   font-family: "Meddon", cursive;
-
+  font-size: 18px;
   display: list-item;
   text-align: -webkit-match-parent;
+  font-weight: 400;
 }
 
 @-moz-keyframes marque{
@@ -74,23 +78,6 @@
     animation-play-state: paused;
 }
 
-// .marquee span {
-//     display:block;
-//     padding-left: 100%;
-//     text-indent: 0;
-//     animation: marquee 15s linear infinite;
-//     cursor: context-menu;
-// }
-// .marquee {
-//     width: 220px;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     box-sizing: border-box;
-// }
-
- // .marquee span:hover {
- //     animation-play-state: paused;
- // }
  .abc-heder{
    position: relative;
    overflow: hidden;
@@ -99,5 +86,5 @@
  }
  .drpdown
  {
-   font-family: 'Architects Daughter' !important;
+   font-family: 'Pacifico', cursive !important;
  }

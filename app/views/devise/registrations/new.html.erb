@@ -4,58 +4,172 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-<!--
-   <div class="form-group">
-    <%= f.label :Username %>
-    <%= f.text_field :name, autofocus: true, class: "form-control",Placeholder:"Enter your name", required: true %>
+<!--Script  of  modal-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      var
+              $login= $('.modal')
+
+              ,tl = new TimelineLite({onComplete:restart});
+
+                  tl.fromTo($login,1,{scale:0,autoAlpha:0},{scale:1,autoAlpha:1, ease:Elastic.easeInOut},'sync');
+              tl.play();
+          function restart(){
+            tl.stop();
+            // tl.restart();
+          }
+    });
+    </script>
+<!-- End of Script -->
+<div class="mask">
+  <div class="bgwrap">
+  <div class="bgmove">
   </div>
+</div>
+
+<div class="mask">
+ <div class="bgwrap">
+ <div class="bgmove">
+  <!-- <p>
+    <span class="slideeee">
+      Welcome to Movie Store
+    </span>
+  </p> -->
+ </div>
+
+ </div>
+<!-- Scripts -->
+<script>
 
 
-
-  <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :file_field, autofocus: true, class: "form-control", required: true %>
-  </div>
+(function(){
 
 
-    <div class="form-group">
-      <%= f.label :DateofBirth %>
-      <%= f.date_field :Date0fbirth, autofocus: true, class: "form-control", required: true %>
-    </div>
+	// Settings ---
+
+	// Set scale - between 1.00 and 1.99
+	var scale = 1.99;
+	var container = document.getElementsByClassName("bgmove")[0];
+
+	getContainerDimensions();
+	// Calculate offset each direction
+	var offset = ((scale - Math.floor(scale)) / 2) * 100;
+	scale = "scale(" + scale + ")";
+	container.style.webkitTransform = scale;
+	container.style.MozTransform = scale;
+	container.style.msTransform = scale;
+	container.style.OTransform = scale;
+	container.style.transform = scale;
+
+	window.addEventListener("resize", function() {
+		getContainerDimensions()
+	});
+
+	container.addEventListener("mousemove", function(e) {
+		moveBgImage(e);
+	});
+
+	function getContainerDimensions() {
+		width = container.offsetWidth;
+		height = container.offsetHeight;
+	}
+
+	function moveBgImage(e) {
+		// Find center of container
+		var pageX = e.pageX - (width / 2);
+		var pageY = e.pageY - (height / 2);
+
+		// Calculate movement
+		var newX = -(pageX / ((width/2)/offset));
+		var newY = -(pageY / ((height/2)/offset));
+
+		// Move bgimage
+		container.style.webkitTransform = "translate(" + newX + "%," + newY + "%) " + scale;
+		container.style.MozTransform = "translate(" + newX + "%," + newY + "%) " + scale;
+		container.style.msTransform = "translate(" + newX + "%," + newY + "%) " + scale;
+		container.style.OTransform = "translate(" + newX + "%," + newY + "%) " + scale;
+		container.style.transform = "translate(" + newX + "%," + newY + "%) " + scale;
+	}
 
 
-	  <div class="form-group">
-	  	<%= f.label :email %>
-	  	<%= f.email_field :email, autofocus: true, class: "form-control",Placeholder:"john@abc.com", autofocus: true ,required: true %>
-	  </div>
+})();
+
+  (function(){
 
 
-	  <div class="form-group">
-	  	<%= f.label :password %>
-	  	<%= f.password_field :password, Placeholder:"Must have atleast 6 characters", class: "form-control", required: true %>
-	  </div>
+  	// Settings ---
 
-	  <div class="form-group">
-	  	<%= f.label :password_confirmation %>
-	  	<%= f.password_field :password_confirmation, class: "form-control", required: true %>
-	  </div>
-
-	  <div class="form-group">
-	  	<%= f.submit "Sign up", class: "btn btn-lg btn-primary" %>
-	  </div> -->
+  	// Set scale - between 1.00 and 1.99
+  	var scale = 1.05;
 
 
+  	// Init ---
+
+  	// Select container to be css transformed
+  	var container = document.getElementsByClassName("bgmove")[0];
+
+  	// Get container dimensions
+  	getContainerDimensions();
+
+  	// Calculate offset each direction
+  	var offset = ((scale - Math.floor(scale)) / 2) * 100;
+
+  	// Prepare css and browser prefix
+  	scale = "scale(" + scale + ")";
+  	container.style.webkitTransform = scale;
+  	container.style.MozTransform = scale;
+  	container.style.msTransform = scale;
+  	container.style.OTransform = scale;
+  	container.style.transform = scale;
 
 
-  <div class="container-fluid lll">
-    <h1> Sign up</h1>
+  	// Event listeners ---
+
+  	window.addEventListener("resize", function() {
+  		getContainerDimensions()
+  	});
+
+  	container.addEventListener("mousemove", function(e) {
+  		moveBgImage(e);
+  	});
+
+
+  	// Helper functions ---
+
+  	function getContainerDimensions() {
+  		width = container.offsetWidth;
+  		height = container.offsetHeight;
+  	}
+
+  	function moveBgImage(e) {
+  		// Find center of container
+  		var pageX = e.pageX - (width / 2);
+  		var pageY = e.pageY - (height / 2);
+
+  		// Calculate movement
+  		var newX = -(pageX / ((width/2)/offset));
+  		var newY = -(pageY / ((height/2)/offset));
+
+  		// Move bgimage
+  		container.style.webkitTransform = "translate(" + newX + "%," + newY + "%) " + scale;
+  		container.style.MozTransform = "translate(" + newX + "%," + newY + "%) " + scale;
+  		container.style.msTransform = "translate(" + newX + "%," + newY + "%) " + scale;
+  		container.style.OTransform = "translate(" + newX + "%," + newY + "%) " + scale;
+  		container.style.transform = "translate(" + newX + "%," + newY + "%) " + scale;
+  	}
+
+
+})();
+ </script>
+
+<div class="modal">
 <div class="signup">
 <div id="login-box">
 <div class="left">
-
+<h1> Sign up </h1>
 
   <%=  f.text_field :name, autofocus: true, class: "lgn-text",Placeholder:"Enter your name", required: true %>
-
   <%= f.date_field :Date0fbirth, autofocus: true, class: "lgn-text", required: true %>
   <%= f.file_field :image, autofocus: true, class: "lgn-text", required: true %>
   <%= f.email_field :email, autofocus: true, class: "lgn-text",Placeholder:"Email-john@abc.com", autofocus: true ,required: true %>
@@ -66,13 +180,16 @@
 </div>
 <% end %>
 <div class="right">
-  <span class="loginwith">Sign in with<br />social network</span>
+  <div class="circle"></div>
+
 
   <button class="social-signin facebook"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></button>
   <button class="social-signin twitter">Sign in with Twitter</button>
   <button class="social-signin google">Sign in with google+</button>
 </div>
 <div class="or">OR</div>
+</div>
+</div>
 </div>
 </div>
 </div>

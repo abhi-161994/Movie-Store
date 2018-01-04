@@ -52,13 +52,15 @@
 										 <% end %>
 									 </div>
 
-          
+
                    <div class="btn-group pull-right">
+                     <% if user_signed_in? %>
                      <% if comment.user_id == current_user.id -%>
                      <!-- <%= link_to 'Destroy', [comment.movie,comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %> -->
                   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Delete</button>
                     <%= render partial: "delete_modal",locals: {movies: comment.movie,comment: comment} %>
                       <% end %>
+                    <% end %>
 
                   </div>
 
