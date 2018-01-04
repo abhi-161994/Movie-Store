@@ -15,7 +15,7 @@ module MovieStore
       # Devise::SessionsController.layout "login"
       # Devise::RegistrationsController.layout "signup"
     end
-  end
+  
 
     config.load_defaults 5.1
 
