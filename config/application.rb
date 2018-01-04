@@ -11,7 +11,10 @@ module MovieStore
     # Initialize configuration defaults for originally generated Rails version.
 
     config.to_prepare do
-   Devise::SessionsController.layout "login"
+      Devise::SessionsController.layout "login"
+      # Devise::SessionsController.layout "login"
+      # Devise::RegistrationsController.layout "signup"
+    end
   end
 
     config.load_defaults 5.1

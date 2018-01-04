@@ -209,7 +209,7 @@ a:hover{
   padding: 30px;
 }
 
-.social-media-link {
+.linkedn{
   display: inline-block;
   padding: 15px;
   margin-right: 5px;
@@ -219,12 +219,40 @@ a:hover{
   color: white;
 }
 
-.social-media-link:hover {
+.linkedn:hover {
   background-color: #17A589;
   color: white;
   box-shadow: 1px 1px 5px #423D3D, -1px 1px 5px #423D3D;
 }
 
+.github{
+  display: inline-block;
+  padding: 15px;
+  margin-right: 5px;
+  border: 2px solid white;
+  border-radius: 40%;
+  text-decoration: none;
+  color: white;
+}
+.github:hover{
+  background-color:grey;
+  color: white;
+  box-shadow: 1px 1px 5px #423D3D, -1px 1px 5px #423D3D;
+}
+.facebook{
+  display: inline-block;
+  padding: 15px;
+  margin-right: 5px;
+  border: 2px solid white;
+  border-radius: 40%;
+  text-decoration: none;
+  color: white;
+}
+.facebook:hover{
+  background-color:blue;
+  color: white;
+  box-shadow: 1px 1px 5px #423D3D, -1px 1px 5px #423D3D;
+}
 .social-media-link:last-child {
   margin-right: 0;
 }
