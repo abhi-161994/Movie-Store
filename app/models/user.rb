@@ -57,6 +57,19 @@ class User < ApplicationRecord
                user.skip_confirmation!
                user.save
 
+
+             elsif auth.provider == "twitter"
+                              user.provider = auth.provider
+                              user.uid = auth.uid
+                              # user.first_name = auth.info.first_name
+                              # user.last_name = auth.info.last_name
+                              user.email = auth.info.email
+                              user.password = Devise.friendly_token[0,20]
+                              user.name = auth.info.name
+                              user.photo = auth.info.image
+                              user.skip_confirmation!
+                              user.save
+                              
            end
        end
      end
