@@ -71,7 +71,7 @@ Rails.application.configure do
       port: 587,
       domain: 'gmail.com',
       authentication: 'plain',
-      user_name: "appMovieStore@gmail.com'",
+      user_name: "appmoviestore@gmail.com'",
       password: "16july1994"
      }
      config.action_mailer.default_url_options = { host: 'https://moviesstore.herokuapp.com'}
