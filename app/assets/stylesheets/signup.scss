@@ -102,10 +102,10 @@ h1 {
 
 }
 
-a{
-   color: #ffffff;
-   text-decoration: none;
-}
+// a{
+//    color: #ffffff;
+//    text-decoration: none;
+// }
 
 .lgnsubmit:hover,
 .lgnsubmit:focus {
@@ -180,6 +180,14 @@ button.social-signin:active {
   transition: 0.2s ease;
 }
 
+button.social-signin.facebook a {
+    color: #fff;
+    text-decoration: none;
+}
+button.social-signin.google a{
+  color: #fff;
+  text-decoration: none;
+}
 button.social-signin.facebook {
   background: #32508E;
 }

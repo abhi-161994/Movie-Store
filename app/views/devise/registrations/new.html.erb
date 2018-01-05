@@ -38,9 +38,10 @@
 <% end %>
 <div class="right">
   <div class="circle"></div>
+
   <button class="social-signin facebook"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></button>
   <button class="social-signin twitter">Sign in with Twitter</button>
-  <button class="social-signin google">Sign in with google+</button>
+  <button class="social-signin google"><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></button>
 </div>
 <div class="or">OR</div>
 </div>
