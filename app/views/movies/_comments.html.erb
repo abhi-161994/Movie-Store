@@ -1,6 +1,6 @@
 <div class="col-md-12">
 
-  <h3>Reviews(<%= @movies.comments.length %>)</h3>
+  <h3 class="Reviews">Reviews(<%= @movies.comments.length %>)</h3>
   <%= form_for([movies, movies.comments.build],class:"form-inline") do |f| %>
 
    <div class="form-group">

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: moviesstore-com
+  api_key: '918698696463138'
+  api_secret: "-4GcV3IoubvjuF4yQiwfOdOdw34"
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: moviesstore-com
+  api_key: '918698696463138'
+  api_secret: "-4GcV3IoubvjuF4yQiwfOdOdw34"
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: moviesstore-com
+  api_key: '918698696463138'
+  api_secret: "-4GcV3IoubvjuF4yQiwfOdOdw34"
+  enhance_image_tag: true
+  static_image_support: false

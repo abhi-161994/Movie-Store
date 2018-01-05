@@ -1,39 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 *:focus {
   outline: none;
 }
-
-.signup {
-  margin: 0;
-  padding: 0;
-  // background: #DDD;
-  font-size: 16px;
-  color: #222;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  // background: url(http://www.eckertseamans.com/wp-content/uploads/2016/03/White-Hallway-Plain-Background-1024x599.jpg) no-repeat;
-
+.signuphead{
+  font-family: 'Pacifico';
+   color: #EF2D56;
 }
-
   .mask {
     position: absolute;
     height: 100%;
     width: 100%;
-    //background: rgba(0, 0, 0, 0.75);
-    z-index: 1;
+    background: image-url("tumblr_static_2012_movies_collage.jpg");
+    // background: cover;
+    // background-repeat: no-repeat;
     // box-shadow: 0 0 500px #000 inset,0 0 300px #000 inset,0 0 200px #000 inset;
-    background-color: #2E4053;
+  }
 
-.modal{
-  display: block;
 
-}
 #login-box {
+  display: block;
+  top: 80px;
   position: relative;
   margin: 5% auto;
   width: 600px;
   height: 450px;
-  background: #FFF;
+  background: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   .circle{
@@ -64,9 +56,9 @@
 }
 
 h1 {
-  margin: 0 0 20px 0;
+  margin: 0px 0px 30px 46px;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .lgn-text,
@@ -198,7 +190,4 @@ button.social-signin.twitter {
 
 button.social-signin.google {
   background: #DD4B39;
-}
-
-
 }

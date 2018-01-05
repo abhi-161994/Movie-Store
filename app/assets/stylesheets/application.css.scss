@@ -9,17 +9,26 @@
  @import 'signup';
  @import 'index';
  @import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Open+Sans:200,300,400,700|Neucha|Meddon);
- @import 'popup';
  @import 'header';
  @import 'navbar';
  @import 'font-awesome';
  @import "alertify";
  @import "alertify/default";
  @import "alertify/bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Yesteryear');
+
+
+ .Movie_detail{
+   font-family: 'Yesteryear', cursive;
+   font-size: 34px;
+ }
 
 
 
   /* Outer */
+  .tab-content{
+    min-height: 530px;
+  }
   .popup {
       width:100%;
       height:100%;

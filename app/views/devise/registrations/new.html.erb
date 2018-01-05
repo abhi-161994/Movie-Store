@@ -9,7 +9,7 @@
     <script>
     $(document).ready(function(){
       var
-              $login= $('.modal')
+              $login= $('#login-box')
 
               ,tl = new TimelineLite({onComplete:restart});
 
@@ -23,142 +23,11 @@
     </script>
 <!-- End of Script -->
 <div class="mask">
-  <div class="bgwrap">
-  <div class="bgmove">
-  </div>
-</div>
-<!-- Scripts -->
-<script>
-
-
-(function(){
-
-
-	// Settings ---
-
-	// Set scale - between 1.00 and 1.99
-	var scale = 1.99;
-	var container = document.getElementsByClassName("bgmove")[0];
-
-	getContainerDimensions();
-	// Calculate offset each direction
-	var offset = ((scale - Math.floor(scale)) / 2) * 100;
-	scale = "scale(" + scale + ")";
-	container.style.webkitTransform = scale;
-	container.style.MozTransform = scale;
-	container.style.msTransform = scale;
-	container.style.OTransform = scale;
-	container.style.transform = scale;
-
-	window.addEventListener("resize", function() {
-		getContainerDimensions()
-	});
-
-	container.addEventListener("mousemove", function(e) {
-		moveBgImage(e);
-	});
-
-	function getContainerDimensions() {
-		width = container.offsetWidth;
-		height = container.offsetHeight;
-	}
-
-	function moveBgImage(e) {
-		// Find center of container
-		var pageX = e.pageX - (width / 2);
-		var pageY = e.pageY - (height / 2);
-
-		// Calculate movement
-		var newX = -(pageX / ((width/2)/offset));
-		var newY = -(pageY / ((height/2)/offset));
-
-		// Move bgimage
-		container.style.webkitTransform = "translate(" + newX + "%," + newY + "%) " + scale;
-		container.style.MozTransform = "translate(" + newX + "%," + newY + "%) " + scale;
-		container.style.msTransform = "translate(" + newX + "%," + newY + "%) " + scale;
-		container.style.OTransform = "translate(" + newX + "%," + newY + "%) " + scale;
-		container.style.transform = "translate(" + newX + "%," + newY + "%) " + scale;
-	}
-
-
-})();
-
-  (function(){
-
-
-  	// Settings ---
-
-  	// Set scale - between 1.00 and 1.99
-  	var scale = 1.05;
-
-
-  	// Init ---
-
-  	// Select container to be css transformed
-  	var container = document.getElementsByClassName("bgmove")[0];
-
-  	// Get container dimensions
-  	getContainerDimensions();
-
-  	// Calculate offset each direction
-  	var offset = ((scale - Math.floor(scale)) / 2) * 100;
-
-  	// Prepare css and browser prefix
-  	scale = "scale(" + scale + ")";
-  	container.style.webkitTransform = scale;
-  	container.style.MozTransform = scale;
-  	container.style.msTransform = scale;
-  	container.style.OTransform = scale;
-  	container.style.transform = scale;
-
-
-  	// Event listeners ---
-
-  	window.addEventListener("resize", function() {
-  		getContainerDimensions()
-  	});
-
-  	container.addEventListener("mousemove", function(e) {
-  		moveBgImage(e);
-  	});
-
-
-  	// Helper functions ---
-
-  	function getContainerDimensions() {
-  		width = container.offsetWidth;
-  		height = container.offsetHeight;
-  	}
-
-  	function moveBgImage(e) {
-  		// Find center of container
-  		var pageX = e.pageX - (width / 2);
-  		var pageY = e.pageY - (height / 2);
-
-  		// Calculate movement
-  		var newX = -(pageX / ((width/2)/offset));
-  		var newY = -(pageY / ((height/2)/offset));
-
-  		// Move bgimage
-  		container.style.webkitTransform = "translate(" + newX + "%," + newY + "%) " + scale;
-  		container.style.MozTransform = "translate(" + newX + "%," + newY + "%) " + scale;
-  		container.style.msTransform = "translate(" + newX + "%," + newY + "%) " + scale;
-  		container.style.OTransform = "translate(" + newX + "%," + newY + "%) " + scale;
-  		container.style.transform = "translate(" + newX + "%," + newY + "%) " + scale;
-  	}
-
-
-})();
- </script>
-
-<div class="modal">
-<div class="signup">
 <div id="login-box">
 <div class="left">
-<h1> Sign up </h1>
+<h1 class="signuphead"> Sign up </h1>
 
   <%=  f.text_field :name, autofocus: true, class: "lgn-text",Placeholder:"Enter your name", required: true %>
-
   <%= f.file_field :image, autofocus: true, class: "lgn-text", required: true %>
   <%= f.email_field :email, autofocus: true, class: "lgn-text",Placeholder:"Email-john@abc.com", autofocus: true ,required: true %>
   <%= f.password_field :password, Placeholder:"Password-atleast 6 characters", class: "lgn-pass", required: true %>
@@ -169,18 +38,10 @@
 <% end %>
 <div class="right">
   <div class="circle"></div>
-
-
   <button class="social-signin facebook"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></button>
   <button class="social-signin twitter">Sign in with Twitter</button>
   <button class="social-signin google">Sign in with google+</button>
 </div>
 <div class="or">OR</div>
 </div>
-</div>
-
-</div>
-
-</div>
-
 </div>
