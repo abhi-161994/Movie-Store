@@ -1,16 +1,17 @@
-<h2>Resend unlock instructions</h2>
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+<%= render 'shared/header' %>
+<div class="confirmation-body">
+<h2 class="confirmation-inst">Resend Unlock instructions</h2>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <div class="email-label"><%= f.label :email,class:"email-label" %></div>
+    <div class="confirmation-input"><%= f.email_field :email, class:"inpt",autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %></div></br>
+  <div class="actn">
+    <%= f.submit "Resend Unlock instructions",class:"bttn-sumbit" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
-  </div>
+</div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render 'shared/footer' %>

@@ -14,11 +14,7 @@ class MoviesController < ApplicationController
 
     @movie_search = Movie.all
     @srch = params[:search]
-    if @srch
-       @movie_search = Movie.search(@srch).order("created_at DESC")
-    else
-      @movie_search = Movie.all.order('created_at DESC')
-    end
+  
        render layout: "index_layout"
   end
 
@@ -58,8 +54,8 @@ end
 
 
   def detail
-    @movies_toprated = Movie.all.order('rating desc').search(params[:search])
-    @movies_topviewed = Movie.all.order('rating asc').search(params[:search])
+    @movies_toprated = Movie.order('rating desc').search(params[:search])
+    @movies_topviewed = Movie.order('rating asc').search(params[:search])
     if @movies_toprated.present?
 
 

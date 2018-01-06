@@ -7,7 +7,7 @@
      <% if user_signed_in?%>
        <% if current_user.image.present? %>
             <img alt="<% @movies.title %>" src="<%= current_user.image_url %>" class="img-thumbnail avatar" align="middle"/>
-            <% else %>
+           <% else %>
           <%=image_tag 'avatar.png',id:"blah",class:"img-thumbnail avatar",align: "middle" %>
             <% end %>
             <% else %>
