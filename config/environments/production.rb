@@ -74,7 +74,7 @@ Rails.application.configure do
       password: "16july1994"
      }
        config.action_mailer.perform_caching = false
-     config.action_mailer.default_url_options = { host: 'https://moviesstore.herokuapp.com'}
+     config.action_mailer.default_url_options = { host: 'https://abhi-movies.herokuapp.com'}
 
 
 
