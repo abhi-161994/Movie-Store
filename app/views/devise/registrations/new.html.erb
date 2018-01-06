@@ -26,9 +26,8 @@
 <%= devise_error_messages! %>
 <div class="left">
 <h1 class="signuphead"> Sign up </h1>
-
   <%=  f.text_field :name, autofocus: true, class: "lgn-text",Placeholder:"Enter your name", required: true %>
-  <%= f.file_field :image, autofocus: true, class: "lgn-text", required: true %>
+  <%= f.file_field :image, class: "lgn-text", required:false %>
   <%= f.email_field :email, autofocus: true, class: "lgn-text",Placeholder:"Email-john@abc.com", autofocus: true ,required: true %>
   <%= f.password_field :password, Placeholder:"Password-atleast 6 characters", class: "lgn-pass", required: true %>
   <%= f.password_field :password_confirmation, Placeholder:"Re-Password", class: "lgn-pass", required: true %>
