@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'appMovieStore@gmail.com'
+  default from: 'appmoviestore@gmail.com'
   layout 'mailer'
 end
