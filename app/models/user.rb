@@ -23,59 +23,59 @@ after_create :send_admin_mail
  end
 
 
-   def self.from_omniauth(auth, signed_in_resource = nil)
-    user = User.where(provider: auth.provider, uid: auth.uid).first
-    if user.present?
-      user
-    else
-      # Check wether theres is already a user with the same email address
-      user_with_email = User.find_by_email(auth.info.email)
-      if user_with_email.present?
-        user = user_with_email
-      else
-          user = User.new
-          if auth.provider == "facebook"
+ def self.from_omniauth(auth, signed_in_resource = nil)
+ user = User.where(provider: auth.provider, uid: auth.uid).first
+ if user.present?
+   user
+ else
+   # Check wether theres is already a user with the same email address
+   user_with_email = User.find_by_email(auth.info.email)
+   if user_with_email.present?
+     user = user_with_email
+   else
+       user = User.new
+       if auth.provider == "facebook"
+         user.provider = auth.provider
+         user.uid = auth.uid
+         user.email = auth.extra.raw_info.email
+         user.password = Devise.friendly_token[0,20]
+         user.name = auth.info.name
+         user.remote_photo_url = auth.info.image
+         # Facebook's token doesn't last forever
+         user.skip_confirmation!
+         user.save
+
+       elsif auth.provider == "google_oauth2"
             user.provider = auth.provider
             user.uid = auth.uid
-            user.email = auth.extra.raw_info.email
+            # user.first_name = auth.info.first_name
+            # user.last_name = auth.info.last_name
+            user.email = auth.info.email
             user.password = Devise.friendly_token[0,20]
-            user.name = auth.info.name
-            user.remote_image_url = auth.info.image
-            # Facebook's token doesn't last forever
+            user.name = auth.info.first_name
+            user.remote_photo_url = auth.info.image
             user.skip_confirmation!
             user.save
 
-          elsif auth.provider == "google_oauth2"
-               user.provider = auth.provider
-               user.uid = auth.uid
-               # user.first_name = auth.info.first_name
-               # user.last_name = auth.info.last_name
-               user.email = auth.info.email
-               user.password = Devise.friendly_token[0,20]
-               user.name = auth.info.name
-               user.remote_image_url = auth.info.image
-               user.skip_confirmation!
-               user.save
+       elsif auth.provider == "twitter"
+                        user.provider = auth.provider
+                        user.uid = auth.uid
+                        # user.first_name = auth.info.first_name
+                        # user.last_name = auth.info.last_name
+                        user.email = auth.info.email
+                        user.password = Devise.friendly_token[0,20]
+                        user.name = auth.info.name
+                        user.remote_image_url = auth.info.image
+                        user.skip_confirmation!
+                        user.save
 
-
-             elsif auth.provider == "twitter"
-                              user.provider = auth.provider
-                              user.uid = auth.uid
-                              # user.first_name = auth.info.first_name
-                              # user.last_name = auth.info.last_name
-                              user.email = auth.info.email
-                              user.password = Devise.friendly_token[0,20]
-                              user.name = auth.info.name
-                              user.remote_image_url = auth.info.image
-                              user.skip_confirmation!
-                              user.save
-
-           end
-       end
      end
-     return user
+
     end
   end
+  return user
+ end
+end
 #   def self.from_omniauth(auth)
 #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 #     user.email = auth.info.email
