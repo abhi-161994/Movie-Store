@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -42,4 +42,55 @@
 
       <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default" %></p>
 
+    </div>
+ -->
+
+
+    <!--Script  of  modal-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+        <script>
+        $(document).ready(function(){
+          var
+                  $login= $('#login-box')
+
+                  ,tl = new TimelineLite({onComplete:restart});
+
+                      tl.fromTo($login,1,{scale:0,autoAlpha:0},{scale:1,autoAlpha:1, ease:Elastic.easeInOut},'sync');
+                  tl.play();
+              function restart(){
+                tl.stop();
+                // tl.restart();
+              }
+        });
+        </script>
+    <!-- End of Script -->
+    <div class="mask">
+    <div id="login-box">
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="left">
+    <h1 class="signuphead1"> Update your account </h1>
+      <%=  f.text_field :name, autofocus: true, class: "lgn-text",Placeholder:"Enter your name", required: true %>
+      <%= f.file_field :image, autofocus: true,  class: "lgn-text", required:false %>
+      <%= f.email_field :email, autofocus: true, class: "lgn-text",Placeholder:"Email-john@abc.com", autofocus: true ,required: true %>
+      <%= f.password_field :password, Placeholder:"leave blank if u dont want to update your password", class: "lgn-pass", required: true %>
+      <%= f.password_field :current_password, Placeholder:"current password to confirm", class: "lgn-pass", required: true %>
+
+      <input type="submit" class="lgnsubmit" name="signup_submit" value="Update Your Account" />
+    </div>
+    <% end %>
+
+    <div class="right">
+      <div>
+        <img src="/assets/avatar.png" class="circle" />
+      </div>
+
+      <button class="social-signin facebook"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></button>
+      <button class="social-signin twitter"><%= link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path %></button>
+      <button class="social-signin google"><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></button>
+    </div>
+    <div class="or">OR</div>
+
+    </div>
     </div>
