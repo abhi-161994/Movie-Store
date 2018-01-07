@@ -31,11 +31,13 @@
 
 						<li class="dropdown">
 							<% if user_signed_in? %>
+							<% if current_user.image.present? %>
              <img class ="pull-left" style="width:50px;border-radius: 35px;border: 3px solid #cccccc; height: 50px;" src="<%=current_user.image_url%>"/>
 							 <a  href="#" class="dropdown-toggle navbar-login" data-toggle="dropdown" style="float: left;"></span><%= current_user.name%>
-
 							 <% else %>
-							 <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Action<strong class="caret"></strong></a> -->
+							 <img class="pull-left" style="width:50px;border-radius: 35px;border: 3px solid #cccccc; height: 50px;" src="/assets/avatar.png"/>
+							 <a  href="#" class="dropdown-toggle navbar-login" data-toggle="dropdown" style="float: left;"></span><%= current_user.name%>
+							 <% end %>
 							 <% end %>
 						  	<ul class="dropdown-menu">
 									 <% if user_signed_in? %>
