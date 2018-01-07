@@ -11,6 +11,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  alias_method :facebook, :all
+  alias_method :google_oauth2, :all
+  alias_method :twitter, :all
+
   private
    def omni_helper
      user = User.from_omniauth(request.env["omniauth.auth"])
@@ -21,11 +25,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
      elsif user.provider == "twitter"
      return "twitter"
      end
-     alias_method :facebook, :all
-    alias_method :google_oauth2, :all
-    alias_method :twitter, :all
-
-
    end
 
 end

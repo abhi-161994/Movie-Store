@@ -46,7 +46,7 @@
 								 <%@movies.comments.order('created_at desc').limit(4).reverse.each do |comment| %>
 									 <div class="col-md-3">
 									  <% if comment.user.image.present? %>
-										<img alt="<% comment.user.name%>" src="<%= comment.user.image%>" class="img-thumbnail avatar-img" align="middle" />
+										<img alt="<% comment.user.name%>" src="<%= comment.user.image_url%>" class="img-thumbnail avatar-img" align="middle" />
 										<% else %>
 										 <%= image_tag "avatar.png",class: "img-thumbnail avatar-img",align: "middle" %>
 										 <% end %>
