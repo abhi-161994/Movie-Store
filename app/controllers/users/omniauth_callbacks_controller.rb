@@ -19,9 +19,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
    def omni_helper
      user = User.from_omniauth(request.env["omniauth.auth"])
      if user.provider == "facebook"
-       return "Google"
+       return "facebook"
      elsif user.provider == "google_oauth2"
-       return "Facebook"
+       return "Google"
      elsif user.provider == "twitter"
      return "twitter"
      end
