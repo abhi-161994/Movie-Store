@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: omni_helper) if is_navigational_format?
     else
       session["devise.user_attributes"] = user.attributes
-      redirect_to new_user_registration_url
+      redirect_to new_user_registration_url, alert: user.errors.full_messages.join("\n")
     end
   end
 
