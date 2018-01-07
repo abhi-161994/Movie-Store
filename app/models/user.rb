@@ -40,7 +40,7 @@ after_create :send_admin_mail
          user.email = auth.extra.raw_info.email
          user.password = Devise.friendly_token[0,20]
          user.name = auth.info.name
-         user.remote_photo_url = auth.info.image
+         user.remote_image_url = auth.info.image
          # Facebook's token doesn't last forever
          user.skip_confirmation!
          user.save
@@ -53,7 +53,7 @@ after_create :send_admin_mail
             user.email = auth.info.email
             user.password = Devise.friendly_token[0,20]
             user.name = auth.info.first_name
-            user.remote_photo_url = auth.info.image
+            user.remote_image_url = auth.info.image
             user.skip_confirmation!
             user.save
 
