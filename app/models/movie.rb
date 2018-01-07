@@ -6,6 +6,6 @@ class Movie < ApplicationRecord
    validates :rating, numericality: {less_than_or_equal_to: 10}
 
   def self.search(search)
-    where("title LIKE?","%#{search}%")
+    where("title ILIKE?","%#{search}%")
 end
 end
