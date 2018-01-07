@@ -4,7 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if user.persisted?
       session[:user_id] = user.id
       sign_in_and_redirect user, notice: "Signed in!"
-      set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
+      set_flash_message(:notice, :success, kind: omni_helper) if is_navigational_format?
     else
       session["devise.user_attributes"] = user.attributes
       redirect_to new_user_registration_url
