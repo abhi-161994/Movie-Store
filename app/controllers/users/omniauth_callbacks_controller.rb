@@ -21,6 +21,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
      elsif user.provider == "twitter"
      return "twitter"
      end
+     alias_method :facebook, :all
+    alias_method :google_oauth2, :all
+    alias_method :twitter, :all
+
+
    end
 
 end
