@@ -34,14 +34,14 @@ class MoviesController < ApplicationController
 
       @mv = OtherServiceCall.new.api_call(params[:movie][:title])
       if @mv == true
-        redirect_to 'http://abhi-movies.herokuapp.com/admin/movies',notice: "Movies Successfully Saved"
+        redirect_to 'http://localhost:3000/admin/movies',notice: "Movies Successfully Saved"
       else
         redirect_to new_admin_movie_path(view: params[:view]),alert: "Movie Not Found Please Verify it."
       end
     else
     @movies = Movie.new(movie_params)
         if @movies.save
-        redirect_to 'http://abhi-movies.herokuapp.com/admin/movies',notice: "Movies Successfully Saved"
+        redirect_to 'http://localhost:3000/admin/movies',notice: "Movies Successfully Saved"
       else
           redirect_to new_admin_movie_path
       end
