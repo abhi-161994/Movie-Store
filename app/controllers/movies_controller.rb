@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
 
-  before_action :set_id,except:[:index,:detail,:create]
+  before_action :set_id,except:[:index,:detail,:create,:chart]
   before_action :authenticate_admin_user!,only: [:create]
   before_action :get_toprated, only:[:index,:detail]
   before_action :get_topviewed, only:[:index,:detail]
@@ -11,22 +11,29 @@ class MoviesController < ApplicationController
     @movies = Movie.all.order('created _at desc').limit(3)
     @movie_toprated = @movies_toprated.limit(4)
     @movie_topviewed = @movies_topviewed.limit(4)
-
     @movie_search = Movie.all
     @srch = params[:search]
-
+    # @top_views = @movies_top_viewed('rating desc').limit(6)
        render layout: "index_layout"
   end
 
   def new
     @movies = Movie.new
-  end
+    end
 
   def edit
   end
 
+def chart
+@top_views = Movie.all.order('view DESC').limit(6)
+end
+
   def show
     @movie_list = Movie.all.order('rating desc')
+    mm = @movies.view + 1
+    @movies.view = mm
+    @movies.save
+
   end
 
   def create
@@ -54,14 +61,12 @@ end
 
 
   def detail
-    @movies_toprated = Movie.order('rating desc').search(params[:search])
-    @movies_topviewed = Movie.order('rating asc').search(params[:search])
+    @movies_toprated =@movies_toprated.search(params[:search])
+    @movies_topviewed =  @movies_topviewed .search(params[:search])
     if @movies_toprated.present?
-
-
   else
-    @movies_toprated = Movie.all.order('rating desc')
-    @movies_topviewed = Movie.all.order('rating asc')
+    @movies_toprated  =  @movies_toprated
+    @movies_topviewed = @movies_topviewed
     flash[:alert] = "There are no movies containing the term"
    end
     @view = params[:view]
@@ -87,7 +92,7 @@ end
  end
 
  def get_topviewed
-   @movies_topviewed = Movie.all.order('rating asc')
+   @movies_topviewed = Movie.all.order('view desc')
  end
 
 end

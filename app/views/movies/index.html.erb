@@ -139,6 +139,6 @@
 <h3 class="index trm">Top Rated Movies</h3>
 <%=render partial:"index",locals: {movies: @movie_toprated} %>
 <div class="index-btn">
-<button class="btn-animate"> <%= link_to "Browse More",movies_detail_path(view: "ByViews"), class: "browse-index"%></button>
+<button class="btn-animate"> <%= link_to "Browse More",movies_detail_path(view: "ByRating"), class: "browse-index"%></button>
 </div>
 </div>

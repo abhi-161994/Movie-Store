@@ -28,8 +28,10 @@ gem 'alertifyjs-rails'
 gem 'font-awesome-rails'
 gem 'cloudinary'
 gem 'figaro'
+gem 'haml'
 
-
+gem 'chartjs-ror'
+gem 'chart-js-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

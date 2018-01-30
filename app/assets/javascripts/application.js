@@ -17,6 +17,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require alertify
+//= require Chart.min
 
 alertify.set('notifier','position', 'top-center');
 

@@ -1,0 +1,18 @@
+
+
+.container
+  .row
+    .col-md-12
+      %h3.Movie_detail
+        Movies Details
+      #tabs-965551.tabbable
+        %ul.nav.nav-tabs
+          %li{:class => "#{rating_active?(@view)}"}
+            %a{"data-toggle" => "tab", :href => "#panel-433299"} By Views
+          %li{:class => "#{view_active?(@view)}"}
+            %a{"data-toggle" => "tab", :href => "#panel-140373"} By Rating
+        .tab-content
+          #panel-433299.tab-pane.active.bywiews-font
+            = render partial:"index",locals: {movies: @movies_topviewed}
+          #panel-140373.tab-pane
+            = render partial:"index",locals: {movies: @movies_toprated}
