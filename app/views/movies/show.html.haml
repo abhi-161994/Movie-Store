@@ -1,0 +1,72 @@
+.container
+  .row
+    %i
+      .col-md-4
+        / <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-thumbnail" style="padding: 90px;" />
+        %img.img-thumbnail{:alt => "@movies.title", :src => "#{@movies.image_url}"}/
+      .col-md-8
+        .col-md-4
+          %h3
+            = @movies.title + " " + "(#{@movies.year})"
+          %b
+            %i Genre:
+          %i= @movies.genre
+        .col-md-4
+          = image_tag 'rating.png',class:"rating-show-image"
+          %h4.rating-show
+            = @movies.rating + "/10"
+        .col-md-4
+        .col-md-12
+          %div
+            %h2 Plot:
+            %p= (@movies.plot)
+        .col-md-12
+          %div
+            %h3 Cast
+            %p= @movies.cast
+        .col-md-12
+          %div
+            %a.btn.btn-primary.web-show{:href => "#{@movies.web}"} Website
+  .row.up-margin
+    .col-md-12
+      .col-md-6
+        - if @movies.comments.present?
+          .row.back-color
+            - @movies.comments.order('created_at desc').limit(4).reverse.each do |comment|
+              .col-md-3
+                - if comment.user.image_url.present?
+                  %img.img-thumbnail.avatar-img{:align => "middle", :alt => "comment.user.name", :src => "#{comment.user.image_url}"}/
+                - else
+                  = image_tag "avatar.png",class: "img-thumbnail avatar-img",align: "middle"
+              .btn-group.pull-right
+                - if user_signed_in?
+                  - if comment.user_id == current_user.id
+                    / <haml_loud> link_to &#39;Destroy&#39;, [comment.movie,comment], method: :delete, data: { confirm: &#39;Are you sure?&#39; }, class: &quot;btn btn-sm btn-default&quot; </haml_loud>
+                    %button.btn.btn-info{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"} Delete
+                    = render partial: "delete_modal",locals: {movies: comment.movie,comment: comment}
+              .col-md-9.comment
+                %h3= comment.user.name
+                %p
+                  = comment.body
+                %p.btm
+                  %small
+                    Submitted
+                    %strong
+                      = time_ago_in_words(comment.created_at)
+                      ago
+              .clearfix
+            .col-md-12
+              %button.btn.btn-primary{"data-target" => "#exampleModalLong", "data-toggle" => "modal", :style => "float: right;", :type => "button"}
+                More Reviews
+            = render partial: "comments_modal",locals: {movies: @movies}
+        - else
+          Be the first to comment
+        .row
+          = render partial: "comments",locals: {movies: @movies}
+      .col-md-6
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title
+              %h4
+                Top 10 List of #{@movies.genre + "-Movies"}
+          = render partial: "top-list",locals: { movies: @movie_list}

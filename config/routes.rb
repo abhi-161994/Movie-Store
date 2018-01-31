@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'movies/detail' => 'movies#detail',as: :movies_detail
-  get 'movies/chart' => 'movies#chart'
+  get 'movies/chart' => 'movies#chart',as: :movies_chart
   resources :movies,:except => [:new,:delete,:edit,:update] do
     resources :comments
   end

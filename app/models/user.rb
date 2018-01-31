@@ -1,4 +1,13 @@
 class User < ApplicationRecord
+
+  has_many :user_logins, dependent: :destroy
+
+  def update_tracked_fields!(request)
+    super
+    UserLoginWorker.perform_async(self.id, request.remote_ip, request.user_agent)
+  end
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :image,UserUploader

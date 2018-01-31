@@ -29,7 +29,8 @@ gem 'font-awesome-rails'
 gem 'cloudinary'
 gem 'figaro'
 gem 'haml'
-
+gem 'activeadmin-logins'
+gem 'geocoder'
 gem 'chartjs-ror'
 gem 'chart-js-rails'
 
