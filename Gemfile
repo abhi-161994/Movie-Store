@@ -31,9 +31,10 @@ gem 'figaro'
 gem 'haml'
 gem 'activeadmin-logins'
 gem 'geocoder'
-gem 'chartjs-ror'   
+gem 'chartjs-ror'
 gem 'chart-js-rails'
 gem 'kaminari'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

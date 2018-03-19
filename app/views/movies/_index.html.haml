@@ -1,0 +1,16 @@
+
+.row
+  - movies.each_with_index  do |movie,index|
+    - if (index % 4) == 0
+      .clearfix
+      .col-sm-3.col-md-3
+        %a.abcccc{:href => "#{movie_path(movie.id)}"}
+          %img.img{:src => "#{movie.image_url}"}/
+          %p.movie-title
+            %strong= movie.title
+    - else
+      .col-sm-3.col-md-3
+        %a.abcccc{:href => "#{movie_path(movie.id)}"}
+          %img.img{:src => "#{movie.image_url}"}/
+          %p.movie-title
+            %strong= movie.title

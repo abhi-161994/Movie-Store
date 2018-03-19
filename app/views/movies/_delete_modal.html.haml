@@ -1,0 +1,13 @@
+#myModal.modal.fade{:role => "dialog"}
+  .modal-dialog
+    / Modal content
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+        %h4.modal-title.del Are you sure?
+      .modal-body
+        %p.content This is a pretty serious action you're about to take. You should think twice about this sort of thing.
+      %button.confirm{"data-dismiss" => "modal", :type => "button"} No,Cancel
+      = link_to 'Yes Do It',[movies,comment], remote: true, method: :delete, class: 'confirm sub'
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
